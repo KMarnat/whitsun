@@ -1,0 +1,94 @@
+/* Footer component
+-------------------*/
+.footer {
+  font-weight: 300;
+
+  .info {
+    display: flex; // Activate flexbox
+    flex-direction: column; // Stacking elements on top of each other
+    align-items: center; // Aligning center on the X axis
+    background-color: var(--secondary-bg-color);
+    color: var(--tertiary-text-color);
+    padding: 2rem 0;
+
+    &__socials {
+      a {
+        margin: 1rem;
+      }
+    }
+
+    &__address {
+      display: flex;
+      padding-top: 1.25rem;
+
+      p {
+        margin: 0 0 0 2rem;
+        position: relative;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &:after {
+          content: '·';
+          position: absolute;
+          margin-left: 1rem;
+        }
+
+        &:last-of-type:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &-nav {
+    &__list {
+      display: flex;
+      font-size: 1.75rem;
+      border-bottom: 1px solid white;
+      padding: 1.25rem 0;
+
+      li {
+        margin-right: 4rem;
+        position: relative;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &:after {
+          content: '·';
+          position: absolute;
+          margin-left: 2rem;
+        }
+        &:last-of-type:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--tertiary-bg-color);
+    padding: 2rem 0;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      margin-top: 1.75rem;
+    }
+
+    &-logo {
+      width: 7rem;
+      margin: 0 4rem;
+    }
+
+    &__title {
+      margin: 0;
+    }
+  }
+}

@@ -1,9 +1,39 @@
 :root {
+  --main-font-fam: 'Roboto', sans-serif;
+  --secondary-font-fam: 'Source Sans 3', sans-serif;
   --main-bg-color: #faf7f1;
   --secondary-bg-color: #2d4637;
   --tertiary-bg-color: #c2bdb3;
-  --main-p-color: #000000;
-  --secondary-p-color: #ffffff;
-  --main-title-color: #00452c;
-  --secondary-title-color: #ffffff;
+  --main-text-color: #00452c;
+  --secondary-text-color: #000000;
+  --tertiary-text-color: #ffffff;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: var(--main-font-fam);
+}
+
+.adaptive {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-photo {
+    // height: 150px /*This is what determines the height of your image*/
+    flex-grow: 1;
+
+    img {
+      max-height: 100%;
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+}
+
+strong {
+  font-weight: 700;
 }
