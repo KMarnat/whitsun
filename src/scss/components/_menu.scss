@@ -1,0 +1,174 @@
+/* Menu component
+----------------------*/
+.menu {
+  &-btn {
+    display: flex; // Activate flexbox
+    flex-direction: column; // Stacking elements on top of each other
+    justify-content: center; // Placing items in the center, Y axis
+    align-items: center; // Placing items in the center, X axis
+    position: fixed; // Placing the item in a specific spot on the document
+    top: 10rem; // Button's location from the top
+    right: 0; // Button's location from the right
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50% 0 50% 50%; // All corners rounded, except top right corner
+    background-color: var(--tertiary-bg-color);
+    z-index: 13; // Position on the Z axis
+
+    .bar {
+      background-color: var(--secondary-bg-color);
+      height: 0.1rem;
+      width: 2rem;
+      margin: 0.3rem 0; // Spacing outside the element, top and bottom
+      transition: transform 0.3s, opacity 0.3s; // Specifying what is transitioning and the time
+
+      // Selecting 3rd line of the hamburger menu
+      &:nth-of-type(3) {
+        width: 1.5rem; // Making it shorter than the others
+        margin-right: 0.5rem; // Using margin right to push it to the left so it is aligned with other lines
+      }
+
+      // Selecting 1st line of the hamburger menu
+      &:nth-of-type(1) {
+        transform-origin: center top; // Setting the origin of the element's transformations
+      }
+
+      // Selecting 2nd line of the hamburger menu
+      &:nth-of-type(2) {
+        transform-origin: center center; // Setting the origin of the element's transformations
+      }
+
+      // Selecting 3rd line of the hamburger menu
+      &:nth-of-type(3) {
+        transform-origin: center bottom; // Setting the origin of the element's transformations
+      }
+    }
+
+    // Styles for when menu button is active
+    &--active {
+      border-left: 1px solid var(--main-bg-color);
+      border-bottom: 1px solid var(--main-bg-color);
+
+      // Styles for what happens to bar lines in the menu when it's activated
+      .bar {
+        // Selecting 1st line of the hamburger menu
+        &:nth-of-type(1) {
+          transform: translateY(12px) rotate(45deg); // Animation settings
+          background-color: var(--main-bg-color); // Changing color
+        }
+
+        // Selecting 2nd line of the hamburger menu
+        &:nth-of-type(2) {
+          transform: translateY(0px) rotate(-45deg); // Animation settings
+          background-color: var(--main-bg-color); // Changing color
+        }
+
+        // Selecting 3rd line of the hamburger menu
+        &:nth-of-type(3) {
+          opacity: 0; // Invisible
+          background-color: var(--main-bg-color); // Changing color
+        }
+      }
+    }
+  }
+
+  &__background {
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--tertiary-bg-color);
+    border-radius: 50% 0 50% 50%; // All corners rounded, except top right corner
+    position: fixed; // Needed for positioning
+    inset: 10rem 0 auto auto;
+    z-index: 9;
+    transform-origin: top right;
+    transition: 0.5s ease;
+    overflow: hidden;
+
+    &--active {
+      transform: scale(100);
+    }
+  }
+
+  &-list {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translatex(-50%);
+    transition: opacity 0.5s;
+
+    opacity: 0;
+
+    &--active {
+      opacity: 1;
+      z-index: 12;
+      transition-delay: 0.1s;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 3rem;
+      position: relative;
+
+      &__icon {
+        background-color: white;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__title {
+        margin-top: 1rem;
+      }
+
+      &__drop {
+        background-color: white;
+        height: 3rem;
+        width: 6rem;
+        border-radius: 0 0 3rem 3rem;
+        position: absolute;
+        top: 3rem;
+        z-index: -1;
+        transition: height 0.3s ease-in-out;
+      }
+
+      &:hover > .item__drop {
+        height: 10rem;
+      }
+
+      .image {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .half-circle {
+        &-left {
+          margin-right: 2rem;
+        }
+
+        &-bot {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+  &__illustration {
+    position: fixed;
+    z-index: -1;
+    margin: 0 20rem;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+    &--active {
+      z-index: 10;
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+  }
+}

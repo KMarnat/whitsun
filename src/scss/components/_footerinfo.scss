@@ -1,0 +1,82 @@
+.info {
+  display: flex; // Activate flexbox
+  flex-direction: column; // Stacking elements on top of each other
+  align-items: center; // Aligning center on the X axis
+  background-color: var(--secondary-bg-color);
+  color: var(--tertiary-text-color);
+  padding: 2rem 0; // Spacing inside the element, top and bottom
+
+  // Social icons container
+  &__socials {
+    // Anchor tag of the socials icon
+    a {
+      margin: 1rem; // Spacing outside the element
+
+      img {
+        transition: 0.3s ease-in-out; // Animation settings
+
+        &:hover {
+          transform: scale(1.2); // Increasing size by 120%
+        }
+      }
+    }
+  }
+
+  // Container of the footer menu
+  &-nav {
+    // Container of the list items
+    &__list {
+      display: flex; // Activate flexbox
+      font-size: 1.75rem; // Text size
+      border-bottom: 1px solid white;
+      padding: 1.25rem 0; // Spacing inside the element, top and bottom
+
+      // List item
+      li {
+        margin-right: 2rem; // Spacing outside the element, right
+        position: relative; // Needed for dot placements between the items
+
+        // Selecting last item
+        &:last-of-type {
+          margin-right: 0; // Removing margin right
+        }
+
+        // Pseudoelement, dot between items
+        &:after {
+          content: '·'; // The dot between items
+          margin-left: 2rem; // Spacing outside the element, left
+        }
+
+        // Pseudoelement of the last item
+        &:last-of-type:after {
+          content: none; // Removing the dot
+        }
+      }
+    }
+  }
+
+  //
+  &__address {
+    display: flex;
+    padding-top: 1.25rem;
+
+    p {
+      margin: 0 0 0 2rem;
+      position: relative;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:after {
+        content: '·';
+        position: absolute;
+        margin-left: 1rem;
+      }
+
+      &:last-of-type:after {
+        content: none;
+      }
+    }
+  }
+}

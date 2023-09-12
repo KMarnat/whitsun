@@ -3,7 +3,11 @@
 .header {
   display: flex; // Activate flexbox
   align-items: center; // Aligning center on the Y axis
-  height: 10rem;
+  height: 10rem; // Height 160px
+  background-color: var(--main-bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 11;
 
   .nav {
     width: 100%; // Horizontally taking up as much space as possible

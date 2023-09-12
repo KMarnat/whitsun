@@ -1,7 +1,20 @@
 /* Main component
 -------------------*/
 .main {
+  position: relative; // Needed for positioning
   .banner {
-    height: 45rem;
+    height: 51rem;
+
+    img {
+      transition: 0.3s ease-in-out; // Banner image animation settings
+    }
+
+    &__logo {
+      position: absolute; // Needed for positioning on top of banner image
+      width: 10rem;
+      z-index: 3; // Position on the Z axis
+      top: calc(50% - 5rem); // Calculating position based on the radius of the element
+      left: calc(50% - 5rem); // Calculating position based on the radius of the element
+    }
   }
 }
