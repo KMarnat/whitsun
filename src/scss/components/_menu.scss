@@ -4,8 +4,8 @@
   &-btn {
     display: flex; // Activate flexbox
     flex-direction: column; // Stacking elements on top of each other
-    justify-content: center; // Placing items in the center, Y axis
-    align-items: center; // Placing items in the center, X axis
+    justify-content: center; // Placing items in the center, main axis
+    align-items: center; // Placing items in the center, corss axis
     position: fixed; // Placing the item in a specific spot on the document
     top: 10rem; // Button's location from the top
     right: 0; // Button's location from the right
@@ -72,74 +72,86 @@
     }
   }
 
+  // Manu background
   &__background {
     width: 6rem;
     height: 6rem;
     background-color: var(--tertiary-bg-color);
     border-radius: 50% 0 50% 50%; // All corners rounded, except top right corner
     position: fixed; // Needed for positioning
-    inset: 10rem 0 auto auto;
-    z-index: 9;
-    transform-origin: top right;
-    transition: 0.5s ease;
-    overflow: hidden;
+    inset: 10rem 0 0 auto; //
+    z-index: 9; // Position on the Z axis
+    transform-origin: top right; // Setting the origin of the element's transformations
+    transition: 0.5s ease; // Specifying the time and
 
+    // Active class for when background is active (menu open)
     &--active {
-      transform: scale(100);
+      transform: scale(100); // Inceasing the element in size
     }
   }
 
+  // Menu list
   &-list {
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translatex(-50%);
-    transition: opacity 0.5s;
-
+    display: flex; // Activate flexbox
+    position: fixed; // Stays in place when scrolling
+    top: 50%; // Position from top
+    left: 50%; // Position from left
+    z-index: -1; // Position on the Z axis
+    transform: translateX(-50%); // Moving the element on X axis 50% of its size
+    transition: opacity 0.5s; // Specifying what is transitioning and the time
     opacity: 0;
 
+    // Styles when menu is opened
     &--active {
-      opacity: 1;
-      z-index: 12;
-      transition-delay: 0.1s;
+      opacity: 1; // Becomes visible
+      z-index: 12; // Position on Z axis is moved up
+      transition-delay: 0.1s; // Transition is delayed 0.1s to first let the background slide over the screen
     }
 
+    //  Menu list item
     .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 3rem;
-      position: relative;
+      display: flex; // Activate flexbox
+      flex-direction: column; // Elements position under each other
+      align-items: center; // Placing items in the center, corss axis
+      margin: 0 3rem; // Spacing outside the element, left and right
+      position: relative; // Needed for positioning of the droplet
 
+      // Icon inside each item
       &__icon {
+        display: flex; // Activate flexbox
+        align-items: center; // Placing items in the center, corss axis
+        justify-content: center; // Placing items in the center, main axis
         background-color: white;
         width: 6rem;
         height: 6rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        border-radius: 50%; // Round corners
       }
 
       &__title {
-        margin-top: 1rem;
+        font-family: 'Source Sans 3', sans-serif; // Changing font
+        margin-top: 1rem; // Spacing outside the element, top
+        font-weight: 700; // Font thickness
       }
 
       &__drop {
         background-color: white;
         height: 3rem;
         width: 6rem;
-        border-radius: 0 0 3rem 3rem;
-        position: absolute;
-        top: 3rem;
-        z-index: -1;
-        transition: height 0.3s ease-in-out;
+        border-radius: 0 0 3rem 3rem; // Corner roundness, bottomr right and bottom left
+        position: absolute; // Needed for positioning
+        top: 3rem; // Positioning from top
+        z-index: -1; // Positioning on the Z axis
+        transition: height 0.3s ease-in-out; // Specifying what is transitioning and the time
       }
 
+      // When item is hovered, the droplet inside changes height
       &:hover > .item__drop {
         height: 10rem;
+      }
+
+      // When item is hovered, the font changes weight
+      &:hover > .item__title {
+        font-weight: 500; // Font thickness
       }
 
       .image {
@@ -147,28 +159,34 @@
         height: 4rem;
       }
 
+      // Classes for specific icons in the menu items
       .half-circle {
+        // Selecting the icon that has the half circle visible on the left side
         &-left {
-          margin-right: 2rem;
+          margin-right: 2rem; // Spacing outside the element, right
         }
 
+        // Selecting the icon that has the half circle visible on the bottom
         &-bot {
-          margin-top: 2rem;
+          margin-top: 2rem; // Spacing outside the element, top
         }
       }
     }
   }
-  &__illustration {
-    position: fixed;
-    z-index: -1;
-    margin: 0 20rem;
-    transition: opacity 0.5s;
-    opacity: 0;
 
+  // Illustration image when menu is opened
+  &__illustration {
+    position: fixed; // Doesn't change position when scrolling
+    z-index: -1; // Position on the Z index
+    margin: 0 20rem; // Spacing outside the element, left and right
+    transition: opacity 0.5s; // Specifying what is transitioning and the time
+    opacity: 0; // Invisible
+
+    // When menu is opened
     &--active {
-      z-index: 10;
-      opacity: 1;
-      transition-delay: 0.1s;
+      z-index: 10; // Position on the Z index
+      opacity: 1; // Becomes visible
+      transition-delay: 0.1s; // Transition is delayed 0.1s to first let the background slide over the screen
     }
   }
 }

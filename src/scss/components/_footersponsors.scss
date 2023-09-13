@@ -1,26 +1,19 @@
 /* Footer sponsors component
 --------------------------*/
 .sponsors {
-  display: flex; // Activate flexbox
-  flex-direction: column; // Placing elements under each other in a column
-  align-items: center; // Aligning items center on the X axis
+  text-align: center; // Aligning items center on the X axis
   background-color: var(--tertiary-bg-color);
   padding: 2rem 0; // Spacing inside the element, top and bottom
 
-  // Container that contains all the sponsor logos
-  &__list {
-    display: flex; // Activate flexbox
-    align-items: center; // Aligning items center on the X axis
-    margin-top: 1.75rem; // Spacing outside the element, top
-  }
-
   // Logo image
   &-logo {
-    height: 4rem;
-    margin: 0 5rem; // Spacing outside the element, left and right
+    img {
+      height: 4rem;
+      margin: 0 auto; // Places the logo images in the center of their container
+    }
   }
 
   &__title {
-    margin: 0; // Removing spacing on the title text
+    margin: 0 0 2rem 0; // Removing spacing on the title text
   }
 }

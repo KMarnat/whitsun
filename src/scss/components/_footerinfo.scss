@@ -4,7 +4,7 @@
   align-items: center; // Aligning center on the X axis
   background-color: var(--secondary-bg-color);
   color: var(--tertiary-text-color);
-  padding: 2rem 0; // Spacing inside the element, top and bottom
+  padding: 1.5rem 0; // Spacing inside the element, top and bottom
 
   // Social icons container
   &__socials {
@@ -14,6 +14,7 @@
 
       img {
         transition: 0.3s ease-in-out; // Animation settings
+        width: 2.5rem;
 
         &:hover {
           transform: scale(1.2); // Increasing size by 120%
@@ -29,7 +30,7 @@
       display: flex; // Activate flexbox
       font-size: 1.75rem; // Text size
       border-bottom: 1px solid white;
-      padding: 1.25rem 0; // Spacing inside the element, top and bottom
+      padding: 1rem 0; // Spacing inside the element, top and bottom
 
       // List item
       li {
@@ -55,27 +56,32 @@
     }
   }
 
-  //
+  // Address container in the footer
   &__address {
-    display: flex;
-    padding-top: 1.25rem;
+    display: flex; // Activate flexbox
+    padding-top: 1.25rem; // Spacing inside the element, top
 
+    // Selecting all <p> elements
     p {
-      margin: 0 0 0 2rem;
-      position: relative;
+      margin: 0 0 0 2rem; // Spacing outside the element, left
+      position: relative; // Needed for positioning
+      font-size: 0.875rem; // Text size
 
+      // Last <p> element in the container
       &:last-of-type {
-        margin-right: 0;
+        margin-right: 0; // Spacing around the element, right
       }
 
+      // Pseudoelement, dot after every <p>
       &:after {
-        content: '·';
-        position: absolute;
-        margin-left: 1rem;
+        content: '·'; // Inside of the pseudoelement
+        position: absolute; // Needed for the positioning of the element
+        margin-left: 1rem; // Spacing outside the element, left. Needed for the positioning of the element
       }
 
+      // Last pseudoelement of <p>
       &:last-of-type:after {
-        content: none;
+        content: none; // Removing the dot
       }
     }
   }

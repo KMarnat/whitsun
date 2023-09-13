@@ -1,0 +1,63 @@
+/* Single artist component
+----------------------------*/
+.artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+    max-width: 90rem;
+    margin-top: 3rem;
+
+    .adaptive {
+      &-photo {
+        height: 20rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3rem;
+    position: relative;
+    color: var(--secondary-text-color);
+    background-color: white;
+
+    p {
+      z-index: 3;
+    }
+
+    .background-circle {
+      position: absolute; // Needed for positioning
+      inset: 0 0 auto 0; // Positioning to top left
+      border-radius: 0 50% 50% 50%; // All corners round except top left
+      aspect-ratio: 1/1; // Keeps the span circular
+      height: 100%; // Takes up as much space as possible, vertically
+      background-color: var(--main-bg-color);
+    }
+  }
+
+  &__spotify {
+    display: flex;
+    align-items: center;
+    width: 90rem;
+    justify-content: space-around;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--tertiary-bg-color);
+  }
+}
