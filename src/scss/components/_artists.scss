@@ -1,37 +1,39 @@
 /* Artists component
 ----------------------*/
 .artists {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4rem 0 10rem 0;
+  max-width: 100rem; // Max spazing horizontally
+  margin: 4rem auto 10rem; // Spacing outside the element
 
+  // Title container of the section
   &-title {
-    display: flex;
-    margin-bottom: 2.5rem;
-    text-align: start;
-    min-width: 102.5rem;
+    display: flex; // Activate flexbox
+    margin-bottom: 2.5rem; // Spacing outside the element, bottom
+    align-items: center; // Aligning items center on main axis
 
+    // Icon next to the title
     &__icon {
       height: 5rem;
-      margin-left: -1.2rem;
+      margin-left: -1.2rem; // Pulling it left side
     }
 
+    // Title name
     &__name {
-      margin: 0;
-      font-weight: 300;
+      margin: 0; // Spacing outside the element
+      font-weight: 300; // Text thickness
     }
   }
 
+  // Arists grid layout
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 102.5rem;
+    display: grid; // Activate grid
+    grid-template-columns: repeat(2, 1fr); // 2 columns, each 1fr wide
 
+    // Grid item (artist)
     &-item {
-      display: flex;
-      flex-direction: row;
+      display: flex; // Activate flex
+      flex-direction: row; // Positioning items next to each other
 
+      // Artist image
       img {
         height: 17rem;
       }

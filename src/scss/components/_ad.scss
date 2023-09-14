@@ -1,0 +1,43 @@
+/* Ad component
+------------------*/
+.ad {
+  max-width: 80rem; // Setting maxiumum width, size horizontally
+  margin: 5rem auto 5rem; // Spacing outside the element - top, left-right, bottom
+
+  // Background of the ad container
+  &__background {
+    background-color: white;
+    padding: 6rem 12rem; // Spacing inside the element, top-bottom, left-right
+  }
+
+  // Container containing the paragraph and img
+  &__content {
+    // Ad text
+    &-p {
+      // Typo
+      font-size: 3rem; // Text size
+      font-weight: 300; // Text thickness
+      line-height: 4rem; // Heigh of each line of text
+    }
+  }
+
+  // Ticket <span>
+  &__ticket {
+    display: flex; // Activate flexbox
+    align-items: center; // Aligning items center cross axis
+
+    // Selecting text
+    &-title {
+      margin: 0; // Spacing outside the element
+      font-weight: 700; // Tex thickness
+    }
+
+    // Background of the ticket icon
+    &-bg {
+      margin-left: 3rem; // SPacing outside the element, left
+      padding: 2rem; // Spacing inside the element
+      background-color: var(--main-bg-color);
+      border-radius: 50%; // Round corners
+    }
+  }
+}

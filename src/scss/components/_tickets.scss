@@ -1,0 +1,139 @@
+/* Tickets component
+---------------------*/
+.festival {
+  max-width: 100rem; // Maximum space taken horizontally
+  margin: 0 auto 10rem; // Spacing outside the element, auto for left-right centers the element
+
+  // Section title
+  &-title {
+    display: flex; // Activate flex
+    align-items: center; // Aligning center on cross axis
+    margin-bottom: 2.5rem; // Spacing outside the element, bottom
+
+    // Icon in the section title
+    &__icon {
+      height: 5rem;
+      margin-left: -1.2rem; // Spacing outside the element, negative value pulls it towards that side
+    }
+
+    // Title name
+    &__name {
+      margin: 0; // Removing spacing outside the element
+      font-weight: 300; // Text thickness
+    }
+  }
+
+  // Tickets container
+  .tickets {
+    max-width: 70rem; // Max size horizontally
+    margin: 0 auto; // Spacing outide the element, auto for left-right centers the element
+
+    // Paragraph of the caontainer
+    &__description {
+      max-width: 30rem; // Max size taken horizontally
+      color: var(--secondary-text-color);
+    }
+
+    // Tickets grid
+    &__grid {
+      display: grid; // Activate grid
+      grid-template-columns: repeat(3, 1fr); // 3 columns, each 1fr wide
+      grid-template-rows: repeat(2, 1fr); // 2 rows, each 1fr high
+      grid-column-gap: 2rem; // Distance between columns
+      grid-row-gap: 2rem; // Distance between rows
+
+      .ticket {
+        filter: drop-shadow(0 2px 5px rgba(black, 0.5)); // Shadow effect, gives depth
+        height: auto;
+        padding: 1rem 2rem; // Spacing inside the element
+        color: white;
+        background-size: 51% 100%; // Gives the small holes on the sides
+        background-repeat: no-repeat; // Not repeating background
+        background-image: radial-gradient(
+            circle at 0 50%,
+            rgba(#c2bdb3, 0) 0.4rem,
+            #c2bdb3 (0.4rem + 0.1rem)
+          ),
+          radial-gradient(circle at 100% 50%, rgba(#c2bdb3, 0) 0.4rem, #c2bdb3 (0.4rem + 0.1rem)); // Background for the ticket
+        background-position: top left, top right;
+
+        // Selecting the 2nd ticket to change background
+        &:nth-of-type(2) {
+          background-image: radial-gradient(
+              circle at 0 50%,
+              rgba(#e1b9aa, 0) 0.4rem,
+              #e1b9aa (0.4rem + 0.1rem)
+            ),
+            radial-gradient(circle at 100% 50%, rgba(#e1b9aa, 0) 0.4rem, #e1b9aa (0.4rem + 0.1rem));
+        }
+
+        // Selecting the 3rd ticket to change background
+        &:nth-of-type(3) {
+          background-image: radial-gradient(
+              circle at 0 50%,
+              rgba(#6c7e73, 0) 0.4rem,
+              #6c7e73 (0.4rem + 0.1rem)
+            ),
+            radial-gradient(circle at 100% 50%, rgba(#6c7e73, 0) 0.4rem, #6c7e73 (0.4rem + 0.1rem));
+        }
+
+        // Selecting the 4th ticket to change background
+        &:nth-of-type(4) {
+          background-image: radial-gradient(
+              circle at 0 50%,
+              rgba(#78a4be, 0) 0.4rem,
+              #78a4be (0.4rem + 0.1rem)
+            ),
+            radial-gradient(circle at 100% 50%, rgba(#78a4be, 0) 0.4rem, #78a4be (0.4rem + 0.1rem));
+        }
+
+        // Selecting the 5th ticket to change background
+        &:nth-of-type(5) {
+          background-image: radial-gradient(
+              circle at 0 50%,
+              rgba(#973030, 0) 0.4rem,
+              #973030 (0.4rem + 0.1rem)
+            ),
+            radial-gradient(circle at 100% 50%, rgba(#973030, 0) 0.4rem, #973030 (0.4rem + 0.1rem));
+        }
+
+        // Ticket title
+        &__name {
+          // Layout
+          margin: 0; // Removing spacing outside the element
+
+          // Typo
+          font-size: 1.5rem; // Text size
+        }
+
+        // Ticket price
+        &__price {
+          margin: 0.5rem 0; // Spacing outside the element
+
+          // Needed to change background of the ticket price
+          span {
+            color: var(--secondary-text-color);
+            background-color: #ffe6b9;
+            padding: 0.3rem; // Spacing inside the element
+          }
+        }
+
+        // Description of the ticket
+        &__desc {
+          line-height: 1rem; // Heigt of each line of text
+          margin: 0; // Removing spacing outside the element
+        }
+
+        // Illustration in the background of the ticket
+        &__background {
+          position: absolute; // Needed for positioning
+          top: 0; // Placing on the top
+          left: calc(
+            50% - 6rem
+          ); // Calculating the distance. Need to place in the middle so taking off half of the width of the element from 50%
+          width: 12rem;
+        }
+      }
+    }
+  }
+}

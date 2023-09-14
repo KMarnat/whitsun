@@ -1,0 +1,81 @@
+/* FoodDetail component
+----------------------*/
+.food-detail {
+  margin: 4rem auto 10rem; // Spacing outside the element
+
+  // Conatiner of the image and description
+  .details {
+    display: grid; // Activate grid
+    grid-template-columns: 1fr 3fr; // 2 columns
+    max-width: 90rem; // Max size horizontally
+    margin: 3rem; // Spacing outside the element
+
+    // Description
+    &__about {
+      display: flex; // Activate flexbox
+      flex-direction: column; // Placing items below one another
+      justify-content: center; // Aligning items center on the main axis
+      padding: 0 3rem; // Spacing inside the element
+      color: var(--secondary-text-color);
+      background-color: white;
+
+      // Title of the food
+      &-name {
+        font-weight: 500; // Text thickness
+      }
+    }
+
+    // Food image container
+    &__image {
+      background-color: #abb5af;
+      height: 30rem;
+      width: 30rem;
+
+      // Food image
+      img {
+        margin-left: -2rem; // Negative spacing outside the element, pulling it left side
+        border-radius: 50%; // Round corners
+        height: 30rem;
+        width: 30rem;
+
+        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+        object-position: center center; // Positions the element in the center vertically and horizontally
+      }
+    }
+  }
+
+  // Food container
+  .food {
+    display: flex; // Active flexbox
+    flex-direction: column; // Aligning items under each other
+    align-items: center; // Aligning items in the center on cross axis
+    margin: 0 0 10rem 0; // Spacing outside the element
+
+    // Title of the container
+    &__title {
+      text-transform: uppercase; // Capitalize letters
+      text-align: center;
+      font-weight: 300;
+    }
+
+    // Food list
+    &__list {
+      display: flex; // Activate flexbox
+      flex-direction: row; // Placing items next to each other
+    }
+
+    // Food item
+    &__item {
+      margin: 0 3rem; // Spacing outside the element
+
+      // Food image
+      img {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%; // Round corners
+        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+        object-position: center center; // Positions the element in the center vertically and horizontally
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import halfcirclegreen from '../assets/half-circle-green.png';
 import artists from '../artists';
+import spotifylogo from '../assets/spotify-logo.svg';
 
 export default function SingleArtist() {
   const [artistName, setArtistName] = useState(decodeURI(window.location.pathname.split('/')[1]));
@@ -14,10 +15,8 @@ export default function SingleArtist() {
         <h2>{artistName}</h2>
       </div>
       <div className="artist__details">
-        <div className="adaptive">
-          <div className="adaptive-photo">
-            <img src={artist.profileImg} alt="artist" />
-          </div>
+        <div className="image">
+          <img src={artist.profileImg} alt="artist" className="image__artist" />
         </div>
         <div className="artist__about">
           <p>
@@ -36,11 +35,40 @@ export default function SingleArtist() {
             Donec porta accumsan dignissim.
           </p>
           <span className="background-circle"></span>
+          <span className="background-circle--dark"></span>
+        </div>
+        <div className="artist__spotify-logo">
+          <img src={spotifylogo} />
+          <h2>Spotify</h2>
+        </div>
+        <div className="artist__spotify-top">
+          <h4>Top 10 melodier fra {artistName}</h4>
         </div>
       </div>
-      <div className="artist__spotify">
-        <h2>Spotify</h2>
-        <h4>Top 10 melodier fra {artistName}</h4>
+      <div className="food">
+        <h2 className="food__title">Gå ikke glip af</h2>
+        <div className="food__list">
+          <div className="food__item">
+            <img
+              src="https://media.cnn.com/api/v1/images/stellar/prod/210826215046-hotdog-stock.jpg?q=w_3000,h_2000,x_0,y_0,c_fill"
+              alt="food"
+            />
+          </div>
+
+          <div className="food__item">
+            <img
+              src="https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe-500x500.jpg"
+              alt="food"
+            />
+          </div>
+
+          <div className="food__item">
+            <img
+              src="https://i.pinimg.com/550x/42/57/57/425757bec893d00c54b07adbc5100833.jpg"
+              alt="food"
+            />
+          </div>
+        </div>
       </div>
     </article>
   );

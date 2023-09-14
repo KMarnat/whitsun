@@ -1,0 +1,26 @@
+/* FoodAndDrinks component
+------------------------*/
+.food {
+  max-width: 100rem; // Max spazing horizontally
+  margin: 4rem auto 10rem; // Spacing outside the element
+
+  // Title container of the section
+  &-title {
+    display: flex; // Activate flexbox
+    align-items: center; // Aligning items center on main axis
+    margin-bottom: 2.5rem; // Spacing outside the element, bottom
+
+    // Icon next to the title
+    &__icon {
+      transform: rotate(90deg); // Rotating it 90 degrees
+      height: 5rem;
+      margin-left: -1.2rem; // Pulling it left side
+    }
+
+    // Title name
+    &__name {
+      margin: 0 0 0 1.5rem; // Spacing outside the element
+      font-weight: 400; // Font thickness
+    }
+  }
+}

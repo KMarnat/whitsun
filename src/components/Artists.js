@@ -14,11 +14,9 @@ export default function Artists() {
       <div className="artists__grid">
         {artists.map((artist, i) => (
           <Link to={`/${artist.name}`} key={i}>
-            <div className="artists__col">
-              <div className="artists__grid-item">
-                <img src={artist.imgOne} alt="artist" />
-                <img src={artist.imgTwo} alt="artist" />
-              </div>
+            <div className="artists__grid-item">
+              <img src={artist.imgOne} alt="artist" />
+              <img src={artist.imgTwo} alt="artist" />
             </div>
           </Link>
         ))}

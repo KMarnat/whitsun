@@ -1,47 +1,48 @@
 /* Single artist component
 ----------------------------*/
 .artist {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; // Activate flexbox
+  flex-direction: column; // Centering on the main axis
+  align-items: center; // Centering on the corss axis
 
   &__name {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: flex; // Activate flexbox
+    align-items: center; // Centering on the corss axis
 
+    // Name
     h2 {
-      margin: 0;
+      margin: 0; // Removing spacing outside the element
     }
   }
 
+  // The "card" of the artist
   &__details {
-    display: flex;
-    flex-direction: row;
-    max-width: 90rem;
-    margin-top: 3rem;
-
-    .adaptive {
-      &-photo {
-        height: 20rem;
-        border-radius: 50%;
-      }
-    }
+    display: grid; // Activate grid
+    grid-template-columns: 1fr 3fr; // 2 columns, 1fr width, 3fr width
+    grid-template-rows: 4fr 1fr; // 2 rows, 4fr heigh, 1fr height
+    max-width: 90rem; // Max size horizontally
+    margin: 3rem; // Spacing outside the element
   }
 
+  // Container of the info about the artist
   &__about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 3rem;
-    position: relative;
-    color: var(--secondary-text-color);
+    // Layout
+    display: flex; // Activate flexbox
+    flex-direction: column; // Aligning items under each other
+    justify-content: center; // Aligning items center on the main axis
+    padding: 0 3rem; // Spacing inside the element
+    position: relative; // Needed for positioning of the circles inside the container
     background-color: white;
 
+    // Typo
+    color: var(--secondary-text-color);
+
+    // Parahgraphs inside the about container
     p {
-      z-index: 3;
+      z-index: 3; // Position on the Z axis, lifting up so text isn't hidden behind the balls
     }
 
+    // The big circle in the background
     .background-circle {
       position: absolute; // Needed for positioning
       inset: 0 0 auto 0; // Positioning to top left
@@ -49,15 +50,115 @@
       aspect-ratio: 1/1; // Keeps the span circular
       height: 100%; // Takes up as much space as possible, vertically
       background-color: var(--main-bg-color);
+
+      // The smaller circle in the background
+      &--dark {
+        position: absolute; // Needed for positioning
+        inset: 0 0 auto 0; // Positioning to top left
+        border-radius: 0 50% 50% 50%; // All corners round except top left
+        aspect-ratio: 1/1; // Keeps the span circular
+        height: 50%; // Takes up as much space as possible, vertically
+        background-color: #abb5af;
+      }
     }
   }
 
+  // Spotify info af the artist
   &__spotify {
-    display: flex;
-    align-items: center;
-    width: 90rem;
-    justify-content: space-around;
-    background-color: var(--main-bg-color);
-    border: 1px solid var(--tertiary-bg-color);
+    // Logo under the artist image
+    &-logo {
+      display: flex; // Activate flexbox
+      align-items: center; // Aligning items center on the cross axis
+      justify-content: center; // Aligning items center on the main axis
+      width: 30rem;
+      border: 1px solid #c0c7c2;
+      border-right: 0; // Removing border frmo the right side
+      background-color: white;
+
+      // Spotify logo img
+      img {
+        height: 3rem;
+      }
+
+      // Spotify company name
+      h2 {
+        // Layout
+        color: var(--secondary-text-color);
+        margin: 0;
+
+        // Typo
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+
+    // 'Top songs from artist' text container
+    &-top {
+      display: flex; // Activate flexbox
+      align-self: center; // Aligning center on the cross axis
+      height: 100%; // Take as much space as possible vertically
+      border: 1px solid #c0c7c2;
+      border-left: 0; // Removing border on left
+      background-color: white;
+
+      // 'Top songs from artist' text
+      h4 {
+        // Layout
+        align-self: center;
+        margin: 0 0 0 1rem;
+
+        // Typo
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // Artist image container
+  .image {
+    background-color: #abb5af;
+    height: 30rem;
+
+    // Artist image
+    &__artist {
+      margin-left: -2rem; // Negative space outside the element, pulling it left
+      border-radius: 50%; // Round corners
+      height: 30rem;
+      width: 30rem;
+      object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+      object-position: center center; // Positions the element in the center vertically and horizontally
+    }
+  }
+
+  // Food container
+  .food {
+    margin: 0 0 10rem 0; // Spacing outside the element
+
+    // Title of the container
+    &__title {
+      text-transform: uppercase; // Capitalize text
+      text-align: center;
+      font-weight: 300; // Text thickness
+    }
+
+    // Food items
+    &__list {
+      display: flex; // Activate flexbox
+      flex-direction: row; // Aligning items next to each other
+    }
+
+    // Food item
+    &__item {
+      margin: 0 3rem; // Spacing outside the element
+
+      // Food image
+      img {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%; // Round corners
+        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+        object-position: center center; // Positions the element in the center vertically and horizontally
+      }
+    }
   }
 }

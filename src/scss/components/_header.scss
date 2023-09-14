@@ -29,7 +29,12 @@
       margin: 0 3rem; // Spacing outside the element, right and left side
       font-size: 1.5rem; // Text size 24px
       position: relative; // Needed for the circle placements behind element
-      font-weight: 300;
+      font-weight: 400;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       &--bold {
         font-weight: 500;

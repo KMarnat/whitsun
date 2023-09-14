@@ -1,0 +1,16 @@
+/* Food grid
+--------------*/
+.food__grid {
+  display: grid; // Activate grid
+  grid-template-columns: repeat(2, 1fr); // 2 columns, 1fr wide
+
+  //
+  &-item {
+    display: flex; // Activate flexbox
+
+    // Food images
+    img {
+      height: 17rem;
+    }
+  }
+}

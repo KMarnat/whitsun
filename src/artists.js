@@ -26,43 +26,50 @@ const artists = [
     name: 'TV-2',
     imgOne: artistTwo,
     imgTwo: artistTwoOne,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Lis Sørensen',
     imgOne: artistThree,
     imgTwo: artistThreeOne,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Anne Dorte & Maria Fra Tøsedrengene',
     imgOne: artistFour,
     imgTwo: artistFourOne,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Shubberne',
     imgOne: artistFiveOne,
     imgTwo: artistFive,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Pernille Rosendahl',
     imgOne: artistSixOne,
     imgTwo: artistSix,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Signe Wennenberg',
     imgOne: artistSevenOne,
     imgTwo: artistSeven,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
   {
     name: 'Liselotte Lyngsø',
     imgOne: artistEightOne,
     imgTwo: artistEight,
-    profileImg: 'https://nationaltoday.com/wp-content/uploads/2022/10/14-Alex-Vargas-1200x834.jpg',
+    profileImg:
+      'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
   },
 ];
 
