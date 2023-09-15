@@ -10,10 +10,18 @@
     img {
       height: 4rem;
       margin: 0 auto; // Places the logo images in the center of their container
+
+      @media #{$breakpoint-tablet-portrait} {
+        height: 3rem;
+      }
     }
   }
 
   &__title {
     margin: 0 0 2rem 0; // Removing spacing on the title text
+
+    @media #{$breakpoint-tablet-portrait} {
+      font-size: 1.25rem;
+    }
   }
 }

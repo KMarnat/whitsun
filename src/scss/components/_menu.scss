@@ -1,6 +1,19 @@
 /* Menu component
 ----------------------*/
 .menu {
+  // position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--active {
+    height: calc(100vh - 10rem);
+
+    @media #{$breakpoint-tablet-portrait} {
+      height: calc(100vh - 7rem);
+    }
+  }
+
   &-btn {
     display: flex; // Activate flexbox
     flex-direction: column; // Stacking elements on top of each other
@@ -14,6 +27,12 @@
     border-radius: 50% 0 50% 50%; // All corners rounded, except top right corner
     background-color: var(--tertiary-bg-color);
     z-index: 13; // Position on the Z axis
+
+    @media #{$breakpoint-tablet-portrait} {
+      top: 7rem;
+      width: 4rem;
+      height: 4rem;
+    }
 
     .bar {
       background-color: var(--secondary-bg-color);
@@ -84,9 +103,16 @@
     transform-origin: top right; // Setting the origin of the element's transformations
     transition: 0.5s ease; // Specifying the time and
 
+    @media #{$breakpoint-tablet-portrait} {
+      inset: 7rem 0 0 auto; //
+      width: 4rem;
+      height: 4rem;
+    }
+
     // Active class for when background is active (menu open)
     &--active {
-      transform: scale(100); // Inceasing the element in size
+      transform: scale(200);
+      width: 100%; // Inceasing the element in size
     }
   }
 
@@ -94,12 +120,19 @@
   &-list {
     display: flex; // Activate flexbox
     position: fixed; // Stays in place when scrolling
-    top: 50%; // Position from top
-    left: 50%; // Position from left
+    // top: 50%; // Position from top
+    // left: 50%; // Position from left
     z-index: -1; // Position on the Z axis
-    transform: translateX(-50%); // Moving the element on X axis 50% of its size
+    // transform: translateX(-50%); // Moving the element on X axis 50% of its size
     transition: opacity 0.5s; // Specifying what is transitioning and the time
     opacity: 0;
+    max-width: 100rem;
+    margin: 0 auto;
+
+    @media #{$breakpoint-large} {
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
     // Styles when menu is opened
     &--active {
@@ -115,6 +148,14 @@
       align-items: center; // Placing items in the center, corss axis
       margin: 0 3rem; // Spacing outside the element, left and right
       position: relative; // Needed for positioning of the droplet
+
+      @media #{$breakpoint-xlarge} {
+        margin: 0 2rem;
+      }
+
+      @media #{$breakpoint-large} {
+        margin: 0 1rem 5rem;
+      }
 
       // Icon inside each item
       &__icon {
@@ -181,6 +222,23 @@
     margin: 0 20rem; // Spacing outside the element, left and right
     transition: opacity 0.5s; // Specifying what is transitioning and the time
     opacity: 0; // Invisible
+    top: 10rem;
+
+    @media #{$breakpoint-xlarge} {
+      margin: 0 10rem;
+    }
+
+    @media #{$breakpoint-large} {
+      margin: 0 6rem;
+    }
+
+    @media #{$breakpoint-tablet-portrait} {
+      top: 7rem;
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      margin: 0 4rem;
+    }
 
     // When menu is opened
     &--active {

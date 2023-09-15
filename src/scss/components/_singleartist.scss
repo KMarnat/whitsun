@@ -18,10 +18,14 @@
   // The "card" of the artist
   &__details {
     display: grid; // Activate grid
-    grid-template-columns: 1fr 3fr; // 2 columns, 1fr width, 3fr width
+    grid-template-columns: 1fr 2fr; // 2 columns, 1fr width, 3fr width
     grid-template-rows: 4fr 1fr; // 2 rows, 4fr heigh, 1fr height
     max-width: 90rem; // Max size horizontally
     margin: 3rem; // Spacing outside the element
+
+    @media #{$breakpoint-large} {
+      grid-template-columns: fr;
+    }
   }
 
   // Container of the info about the artist
@@ -51,14 +55,22 @@
       height: 100%; // Takes up as much space as possible, vertically
       background-color: var(--main-bg-color);
 
+      @media #{$breakpoint-large} {
+        display: none;
+      }
+
       // The smaller circle in the background
       &--dark {
         position: absolute; // Needed for positioning
         inset: 0 0 auto 0; // Positioning to top left
         border-radius: 0 50% 50% 50%; // All corners round except top left
         aspect-ratio: 1/1; // Keeps the span circular
-        height: 50%; // Takes up as much space as possible, vertically
+        height: 50%; // Takes up 50% of space, vertically
         background-color: #abb5af;
+
+        @media #{$breakpoint-large} {
+          display: none;
+        }
       }
     }
   }
@@ -117,7 +129,9 @@
   // Artist image container
   .image {
     background-color: #abb5af;
-    height: 30rem;
+    height: auto;
+    @media #{$breakpoint-large} {
+    }
 
     // Artist image
     &__artist {
@@ -127,6 +141,11 @@
       width: 30rem;
       object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
       object-position: center center; // Positions the element in the center vertically and horizontally
+
+      @media #{$breakpoint-large} {
+        height: 20rem;
+        width: 20rem;
+      }
     }
   }
 
@@ -145,11 +164,24 @@
     &__list {
       display: flex; // Activate flexbox
       flex-direction: row; // Aligning items next to each other
+
+      @media #{$breakpoint-mobile-landscape} {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     // Food item
     &__item {
       margin: 0 3rem; // Spacing outside the element
+
+      @media #{$breakpoint-tablet-portrait} {
+        margin: 0 1rem; // Spacing outside the element
+      }
+
+      @media #{$breakpoint-mobile-landscape} {
+        margin-bottom: 1rem;
+      }
 
       // Food image
       img {
@@ -158,6 +190,11 @@
         border-radius: 50%; // Round corners
         object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
         object-position: center center; // Positions the element in the center vertically and horizontally
+
+        @media #{$breakpoint-large} {
+          height: 10rem;
+          width: 10rem;
+        }
       }
     }
   }

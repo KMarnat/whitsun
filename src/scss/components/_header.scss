@@ -8,10 +8,35 @@
   position: sticky;
   top: 0;
   z-index: 11;
+
+  @media #{$breakpoint-tablet-portrait} {
+    justify-content: space-between;
+    padding: 1rem;
+    height: 7rem;
+  }
+
+  &__tickets {
+    display: none;
+    border-radius: 50%;
+    background-color: #e1b9aa;
+    padding: 0.5rem;
+
+    img {
+      width: 3rem;
+    }
+
+    @media #{$breakpoint-tablet-portrait} {
+      display: flex;
+    }
+  }
 }
 
 .nav {
   width: 100%; // Horizontally taking up as much space as possible
+
+  @media #{$breakpoint-tablet-portrait} {
+    display: none;
+  }
 
   &-main {
     margin-left: 2rem; // Spacing outside the element on the left side
@@ -31,6 +56,10 @@
       position: relative; // Needed for the circle placements behind element
       font-weight: 400;
       transition: 0.3s ease-in-out;
+
+      @media #{$breakpoint-large} {
+        margin: 0 1rem;
+      }
 
       &:hover {
         transform: scale(1.1);

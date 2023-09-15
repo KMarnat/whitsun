@@ -4,10 +4,22 @@
   max-width: 80rem; // Setting maxiumum width, size horizontally
   margin: 5rem auto 5rem; // Spacing outside the element - top, left-right, bottom
 
+  @media #{$breakpoint-xxlarge} {
+    max-width: 60rem;
+  }
+
   // Background of the ad container
   &__background {
     background-color: white;
     padding: 6rem 12rem; // Spacing inside the element, top-bottom, left-right
+
+    @media #{$breakpoint-xxlarge} {
+      padding: 3rem 6rem;
+    }
+
+    @media #{$breakpoint-large} {
+      padding: 1rem 2rem;
+    }
   }
 
   // Container containing the paragraph and img
@@ -18,6 +30,11 @@
       font-size: 3rem; // Text size
       font-weight: 300; // Text thickness
       line-height: 4rem; // Heigh of each line of text
+
+      @media #{$breakpoint-tablet-portrait} {
+        font-size: 2rem; // Text size
+        line-height: 3rem; // Heigh of each line of text
+      }
     }
   }
 
@@ -38,6 +55,10 @@
       padding: 2rem; // Spacing inside the element
       background-color: var(--main-bg-color);
       border-radius: 50%; // Round corners
+
+      @media #{$breakpoint-mobile-portrait} {
+        padding: 1rem;
+      }
     }
   }
 }

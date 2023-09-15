@@ -1,3 +1,5 @@
+/* Footer info component
+------------------------*/
 .info {
   display: flex; // Activate flexbox
   flex-direction: column; // Stacking elements on top of each other
@@ -32,10 +34,24 @@
       border-bottom: 1px solid white;
       padding: 1rem 0; // Spacing inside the element, top and bottom
 
+      @media #{$breakpoint-tablet-portrait} {
+        font-size: 1.25rem;
+      }
+
+      @media #{$breakpoint-mobile-landscape} {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 3rem;
+      }
+
       // List item
       li {
         margin-right: 2rem; // Spacing outside the element, right
         position: relative; // Needed for dot placements between the items
+
+        @media #{$breakpoint-tablet-portrait} {
+          margin-right: 1rem;
+        }
 
         // Selecting last item
         &:last-of-type {
@@ -46,6 +62,14 @@
         &:after {
           content: '·'; // The dot between items
           margin-left: 2rem; // Spacing outside the element, left
+
+          @media #{$breakpoint-tablet-portrait} {
+            margin-left: 1rem;
+          }
+
+          @media #{$breakpoint-mobile-landscape} {
+            content: none;
+          }
         }
 
         // Pseudoelement of the last item
@@ -61,11 +85,20 @@
     display: flex; // Activate flexbox
     padding-top: 1.25rem; // Spacing inside the element, top
 
+    @media #{$breakpoint-mobile-landscape} {
+      flex-direction: column;
+      align-items: center;
+    }
+
     // Selecting all <p> elements
     p {
       margin: 0 0 0 2rem; // Spacing outside the element, left
       position: relative; // Needed for positioning
       font-size: 0.875rem; // Text size
+
+      @media #{$breakpoint-mobile-landscape} {
+        margin: 0;
+      }
 
       // Last <p> element in the container
       &:last-of-type {
@@ -77,6 +110,11 @@
         content: '·'; // Inside of the pseudoelement
         position: absolute; // Needed for the positioning of the element
         margin-left: 1rem; // Spacing outside the element, left. Needed for the positioning of the element
+
+        @media #{$breakpoint-mobile-landscape} {
+          content: '';
+          margin-left: 0;
+        }
       }
 
       // Last pseudoelement of <p>

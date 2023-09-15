@@ -1,5 +1,6 @@
 import HeaderNav from './HeaderNav.js';
 import Logo from '../assets/whitsunLogo.webp';
+import ticketgreen from '../assets/ticket-green.png';
 import { Link } from 'react-router-dom';
 import MenuButton from './Menu.js';
 
@@ -22,6 +23,9 @@ export default function Header() {
           className="nav-secondary"
           modifier="item--bold"
         />
+        <button className="header__tickets">
+          <img src={ticketgreen} />
+        </button>
       </div>
       <MenuButton />
     </>

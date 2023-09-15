@@ -14,7 +14,7 @@ export default function MenuButton() {
   };
 
   return (
-    <div className="menu">
+    <div className={`menu ${isActive ? 'menu--active' : ''}`}>
       <div className={`menu__background ${isActive ? 'menu__background--active' : ''}`}></div>
       <img
         src={backgroundtubes}
@@ -26,7 +26,7 @@ export default function MenuButton() {
         <Link to={'/billetter'} onClick={handleClick}>
           <li className="item">
             <span className="item__icon">
-              <img src={halfcircleleft} className="image half-circle-left" />
+              <img src={halfcircleleft} className="image half-circle-left" alt="menu item icon" />
             </span>
             <span className="item__title">Billetter</span>
             <span className="item__drop"></span>
@@ -35,7 +35,7 @@ export default function MenuButton() {
         <Link to={'/artisterne'} onClick={handleClick}>
           <li className="item">
             <span className="item__icon">
-              <img src={circle} className="image circle" />
+              <img src={circle} className="image circle" alt="menu item icon" />
             </span>
             <span className="item__title">Artisterne</span>
             <span className="item__drop"></span>
@@ -44,7 +44,7 @@ export default function MenuButton() {
         <Link to={'/mad&drikke'} onClick={handleClick}>
           <li className="item">
             <span className="item__icon">
-              <img src={halfcirclebottom} className="image half-circle-bot" />
+              <img src={halfcirclebottom} className="image half-circle-bot" alt="menu item icon" />
             </span>
             <span className="item__title">Mad & Drikke</span>
             <span className="item__drop"></span>
@@ -52,7 +52,7 @@ export default function MenuButton() {
         </Link>
         <li className="item">
           <span className="item__icon">
-            <img src={circledot} className="image" />
+            <img src={circledot} className="image" alt="menu item icon" />
           </span>
           <span className="item__title">Frivillige</span>
           <span className="item__drop"></span>
@@ -60,7 +60,10 @@ export default function MenuButton() {
         <Link to={'/info'} onClick={handleClick}>
           <li className="item">
             <span className="item__icon">
-              <img src="https://whitsun.dk/wp-content/uploads/2022/03/MenuIcon_info.png.webp" />
+              <img
+                src="https://whitsun.dk/wp-content/uploads/2022/03/MenuIcon_info.png.webp"
+                alt="menu item icon"
+              />
             </span>
             <span className="item__title">Information</span>
             <span className="item__drop"></span>
@@ -68,7 +71,10 @@ export default function MenuButton() {
         </Link>
         <li className="item">
           <span className="item__icon">
-            <img src="https://whitsun.dk/wp-content/uploads/2022/09/Om.png.webp" />
+            <img
+              src="https://whitsun.dk/wp-content/uploads/2022/09/Om.png.webp"
+              alt="menu item icon"
+            />
           </span>
           <span className="item__title">Om Whitsun</span>
           <span className="item__drop"></span>

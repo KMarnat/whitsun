@@ -2,8 +2,13 @@
 -------------------*/
 .main {
   position: relative; // Needed for positioning
+
   .banner {
     height: 51rem;
+
+    @media #{$breakpoint-tablet-portrait} {
+      height: 40rem;
+    }
 
     img {
       transition: 0.3s ease-in-out; // Banner image animation settings
@@ -15,6 +20,12 @@
       z-index: 3; // Position on the Z axis
       top: calc(50% - 5rem); // Calculating position based on the radius of the element
       left: calc(50% - 5rem); // Calculating position based on the radius of the element
+
+      @media #{$breakpoint-tablet-portrait} {
+        width: 5rem;
+        top: calc(50% - 2.5rem); // Calculating position based on the radius of the element
+        left: calc(50% - 2.5rem); // Calculating position based on the radius of the element
+      }
     }
   }
 }

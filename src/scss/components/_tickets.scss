@@ -10,17 +10,32 @@
     align-items: center; // Aligning center on cross axis
     margin-bottom: 2.5rem; // Spacing outside the element, bottom
 
+    @media #{$breakpoint-mobile-portrait} {
+      margin-top: 4rem;
+    }
+
     // Icon in the section title
     &__icon {
       height: 5rem;
       margin-left: -1.2rem; // Spacing outside the element, negative value pulls it towards that side
+      @media #{$breakpoint-mobile-landscape} {
+        height: 3rem;
+      }
     }
 
     // Title name
     &__name {
       margin: 0; // Removing spacing outside the element
       font-weight: 300; // Text thickness
+
+      @media #{$breakpoint-mobile-landscape} {
+        font-size: 2.5rem;
+      }
     }
+  }
+
+  @media (max-width: 100em) {
+    margin: 1rem 2rem;
   }
 
   // Tickets container
@@ -41,6 +56,17 @@
       grid-template-rows: repeat(2, 1fr); // 2 rows, each 1fr high
       grid-column-gap: 2rem; // Distance between columns
       grid-row-gap: 2rem; // Distance between rows
+
+      @media #{$breakpoint-large} {
+        grid-template-columns: repeat(2, 1fr); // 3 columns, each 1fr wide
+        max-width: 45rem;
+        margin: 0 auto;
+      }
+
+      @media #{$breakpoint-mobile-landscape} {
+        grid-template-columns: repeat(1, 1fr); // 3 columns, each 1fr wide
+        max-width: 25rem;
+      }
 
       .ticket {
         filter: drop-shadow(0 2px 5px rgba(black, 0.5)); // Shadow effect, gives depth
