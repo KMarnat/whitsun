@@ -7,8 +7,10 @@ export default function FoodGrid() {
       {foods.map((food, i) => (
         <Link to={`${food.name}`} key={i}>
           <div className="food__grid-item">
-            <img src={food.imgOne} alt="food" />
-            <img src={food.imgTwo} alt="food" />
+            <div className="food-cell">
+              <img src={food.imgOne} alt="food" />
+              <img src={food.imgTwo} alt="food" className="food-cell__illustration" />
+            </div>
           </div>
         </Link>
       ))}

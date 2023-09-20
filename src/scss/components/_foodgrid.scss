@@ -4,13 +4,28 @@
   display: grid; // Activate grid
   grid-template-columns: repeat(2, 1fr); // 2 columns, 1fr wide
 
-  //
-  &-item {
-    display: flex; // Activate flexbox
+  @media #{$breakpoint-large} {
+    grid-template-columns: repeat(1, 1fr); // 2 columns, each 1fr wide
+  }
 
-    // Food images
+  //
+  .food-cell {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    @media #{$breakpoint-tablet-portrait} {
+      grid-template-columns: 1fr;
+    }
+
+    &__illustration {
+      @media #{$breakpoint-tablet-portrait} {
+        display: none;
+      }
+    }
+
     img {
-      height: 17rem;
+      max-width: 100%;
+      height: auto;
     }
   }
 }

@@ -4,6 +4,10 @@
   max-width: 100rem; // Max spazing horizontally
   margin: 4rem auto 10rem; // Spacing outside the element
 
+  @media (max-width: 100rem) {
+    margin: 4rem 2rem 10rem; // Spacing outside the element
+  }
+
   // Title container of the section
   &-title {
     display: flex; // Activate flexbox
@@ -20,6 +24,9 @@
     &__name {
       margin: 0; // Spacing outside the element
       font-weight: 300; // Text thickness
+      @media #{$breakpoint-mobile-landscape} {
+        font-size: 2.5rem;
+      }
     }
   }
 
@@ -28,14 +35,36 @@
     display: grid; // Activate grid
     grid-template-columns: repeat(2, 1fr); // 2 columns, each 1fr wide
 
-    // Grid item (artist)
-    &-item {
-      display: flex; // Activate flex
-      flex-direction: row; // Positioning items next to each other
+    @media #{$breakpoint-large} {
+      grid-template-columns: repeat(1, 1fr); // 2 columns, each 1fr wide
+    }
 
-      // Artist image
+    // Grid item (artist)
+    .artist {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+
+      @media #{$breakpoint-tablet-portrait} {
+        grid-template-columns: 1fr;
+      }
+
+      &--inverse {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        @media #{$breakpoint-tablet-portrait} {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &__illustration {
+        @media #{$breakpoint-tablet-portrait} {
+          display: none;
+        }
+      }
+
       img {
-        height: 17rem;
+        max-width: 100%;
+        height: auto;
       }
     }
   }

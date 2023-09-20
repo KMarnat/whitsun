@@ -111,8 +111,7 @@
 
     // Active class for when background is active (menu open)
     &--active {
-      transform: scale(200);
-      width: 100%; // Inceasing the element in size
+      transform: scale(200); // 200 times the size when active
     }
   }
 

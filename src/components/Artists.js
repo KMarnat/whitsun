@@ -15,8 +15,18 @@ export default function Artists() {
         {artists.map((artist, i) => (
           <Link to={`/${artist.name}`} key={i}>
             <div className="artists__grid-item">
-              <img src={artist.imgOne} alt="artist" />
-              <img src={artist.imgTwo} alt="artist" />
+              <div className={`artist ${artist.modifier ? artist.modifier : ''}`}>
+                <img
+                  src={artist.imgOne}
+                  alt="artist"
+                  className={artist.imgOne.includes('illustration') && 'artist__illustration'}
+                />
+                <img
+                  src={artist.imgTwo}
+                  alt="artist"
+                  className={artist.imgTwo.includes('illustration') && 'artist__illustration'}
+                />
+              </div>
             </div>
           </Link>
         ))}
