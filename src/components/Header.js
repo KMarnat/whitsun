@@ -15,7 +15,7 @@ export default function Header() {
           modifier="item--bg"
         />
         <Link to={'/'}>
-          <img src={Logo} />
+          <img src={Logo} alt="logo" />
         </Link>
         <HeaderNav
           firstItem="spotify"
@@ -24,7 +24,7 @@ export default function Header() {
           modifier="item--bold"
         />
         <button className="header__tickets">
-          <img src={ticketgreen} />
+          <img src={ticketgreen} alt="header tickets" />
         </button>
       </div>
       <MenuButton />

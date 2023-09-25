@@ -15,7 +15,7 @@ export default function Artists() {
         {artists.map((artist, i) => (
           <Link to={`/${artist.name}`} key={i}>
             <div className="artists__grid-item">
-              <div className={`artist ${artist.modifier ? artist.modifier : ''}`}>
+              <div className={`artist ${artist.modifier && artist.modifier}`}>
                 <img
                   src={artist.imgOne}
                   alt="artist"

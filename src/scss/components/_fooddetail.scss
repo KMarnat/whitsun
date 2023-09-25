@@ -23,6 +23,10 @@
       color: var(--secondary-text-color);
       background-color: white;
 
+      @media #{$breakpoint-mobile-portrait} {
+        padding: 0 1rem;
+      }
+
       // Title of the food
       &-name {
         font-weight: 500; // Text thickness
@@ -32,8 +36,8 @@
     // Food image container
     &__image {
       background-color: #abb5af;
-      height: 30rem;
-      width: 30rem;
+      max-height: 30rem;
+      max-width: 30rem;
 
       @media #{$breakpoint-large} {
         height: 20rem;

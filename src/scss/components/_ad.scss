@@ -14,50 +14,50 @@
     padding: 6rem 12rem; // Spacing inside the element, top-bottom, left-right
 
     @media #{$breakpoint-xxlarge} {
-      padding: 3rem 6rem;
+      padding: 3rem 6rem; // Spacing inside the element, top-bottom, left-right
     }
 
     @media #{$breakpoint-large} {
-      padding: 1rem 2rem;
+      padding: 1rem 2rem; // Spacing inside the element, top-bottom, left-right
     }
-  }
 
-  // Container containing the paragraph and img
-  &__content {
-    // Ad text
-    &-p {
-      // Typo
-      font-size: 3rem; // Text size
-      font-weight: 300; // Text thickness
-      line-height: 4rem; // Heigh of each line of text
+    // Container containing the paragraph and img
+    .content {
+      // Ad text
+      &__text {
+        // Typo
+        font-size: 3rem; // Text size
+        font-weight: 300; // Text thickness
+        line-height: 4rem; // Heigh of each line of text
 
-      @media #{$breakpoint-tablet-portrait} {
-        font-size: 2rem; // Text size
-        line-height: 3rem; // Heigh of each line of text
+        @media #{$breakpoint-tablet-portrait} {
+          font-size: 2rem; // Text size
+          line-height: 3rem; // Heigh of each line of text
+        }
       }
     }
-  }
 
-  // Ticket <span>
-  &__ticket {
-    display: flex; // Activate flexbox
-    align-items: center; // Aligning items center cross axis
+    // Ticket <span>
+    .ticket {
+      display: flex; // Activate flexbox
+      align-items: center; // Aligning items center cross axis
 
-    // Selecting text
-    &-title {
-      margin: 0; // Spacing outside the element
-      font-weight: 700; // Tex thickness
-    }
+      // Selecting text
+      &__title {
+        margin: 0; // Spacing outside the element
+        font-weight: 700; // Tex thickness
+      }
 
-    // Background of the ticket icon
-    &-bg {
-      margin-left: 3rem; // SPacing outside the element, left
-      padding: 2rem; // Spacing inside the element
-      background-color: var(--main-bg-color);
-      border-radius: 50%; // Round corners
+      // Background of the ticket icon
+      &__bg {
+        margin-left: 3rem; // SPacing outside the element, left
+        padding: 2rem; // Spacing inside the element
+        background-color: var(--main-bg-color);
+        border-radius: 50%; // Round corners
 
-      @media #{$breakpoint-mobile-portrait} {
-        padding: 1rem;
+        @media #{$breakpoint-mobile-portrait} {
+          padding: 1rem;
+        }
       }
     }
   }

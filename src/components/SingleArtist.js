@@ -11,7 +11,7 @@ export default function SingleArtist() {
   return (
     <article className="artist">
       <div className="artist__name">
-        <img src={halfcirclegreen} />
+        <img src={halfcirclegreen} alt="title icon" />
         <h2>{artistName}</h2>
       </div>
       <div className="artist__details">
@@ -38,7 +38,7 @@ export default function SingleArtist() {
           <span className="background-circle--dark"></span>
         </div>
         <div className="artist__spotify-logo">
-          <img src={spotifylogo} />
+          <img src={spotifylogo} alt="spotify" />
           <h2>Spotify</h2>
         </div>
         <div className="artist__spotify-top">

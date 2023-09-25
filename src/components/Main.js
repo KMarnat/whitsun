@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import MenuButton from './Menu';
 
 export default function Main() {
   const [isHovered, setIsHovered] = useState(false);

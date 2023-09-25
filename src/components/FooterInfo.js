@@ -6,10 +6,10 @@ export default function FooterInfo() {
     <div className="info">
       <div className="info__socials">
         <a href="#">
-          <img src={fb} />
+          <img src={fb} alt="socials icon" />
         </a>
         <a href="#">
-          <img src={instagram} />
+          <img src={instagram} alt="socials icon" />
         </a>
       </div>
       <nav className="info-nav">

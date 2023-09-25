@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import foods from '../foods';
-import halfcirclegreen from '../assets/half-circle-green.png';
 
 export default function FoodDetail() {
   const [foodName, setFoodName] = useState(decodeURI(window.location.pathname.split('drikke/')[1]));

@@ -4,6 +4,10 @@
   max-width: 100rem; // Maximum space taken horizontally
   margin: 0 auto 10rem; // Spacing outside the element, auto for left-right centers the element
 
+  @media (max-width: 100rem) {
+    margin: 1rem 2rem 10rem; // Spacing outside the element, top-bottom, left-right
+  }
+
   // Section title
   &-title {
     display: flex; // Activate flex
@@ -11,7 +15,7 @@
     margin-bottom: 2.5rem; // Spacing outside the element, bottom
 
     @media #{$breakpoint-mobile-portrait} {
-      margin-top: 4rem;
+      margin-top: 4rem; // Spacing outside the element, top
     }
 
     // Icon in the section title
@@ -29,13 +33,9 @@
       font-weight: 300; // Text thickness
 
       @media #{$breakpoint-mobile-landscape} {
-        font-size: 2.5rem;
+        font-size: 2.5rem; // Text size
       }
     }
-  }
-
-  @media (max-width: 100em) {
-    margin: 1rem 2rem;
   }
 
   // Tickets container
@@ -60,17 +60,16 @@
       @media #{$breakpoint-large} {
         grid-template-columns: repeat(2, 1fr); // 3 columns, each 1fr wide
         max-width: 45rem;
-        margin: 0 auto;
+        margin: 0 auto; // Spacing outside the element, top-bottom, left-right
       }
 
       @media #{$breakpoint-mobile-landscape} {
         grid-template-columns: repeat(1, 1fr); // 3 columns, each 1fr wide
-        max-width: 25rem;
+        max-width: 25rem; // Maximum space the element takes horizontally
       }
 
       .ticket {
         filter: drop-shadow(0 2px 5px rgba(black, 0.5)); // Shadow effect, gives depth
-        height: auto;
         padding: 1rem 2rem; // Spacing inside the element
         color: white;
         background-size: 51% 100%; // Gives the small holes on the sides

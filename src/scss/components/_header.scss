@@ -5,28 +5,29 @@
   align-items: center; // Aligning center on the Y axis
   height: 10rem; // Height 160px
   background-color: var(--main-bg-color);
-  position: sticky;
-  top: 0;
-  z-index: 11;
+  position: sticky; // Visible when scrolling
+  top: 0; // Start point
+  z-index: 11; // Position on the Z axis
 
   @media #{$breakpoint-tablet-portrait} {
-    justify-content: space-between;
+    justify-content: space-between; // Space between the items is even
     padding: 1rem;
     height: 7rem;
   }
 
+  // Ticket button on smaller screens
   &__tickets {
-    display: none;
-    border-radius: 50%;
+    display: none; // Hiding the button initially
+    border-radius: 50%; // Round corners
     background-color: #e1b9aa;
-    padding: 0.5rem;
+    padding: 0.5rem; // Spacing inside the element
 
     img {
       width: 3rem;
     }
 
     @media #{$breakpoint-tablet-portrait} {
-      display: flex;
+      display: flex; // Becomes visible by changing display from 'none' to 'flex'
     }
   }
 }
@@ -35,7 +36,7 @@
   width: 100%; // Horizontally taking up as much space as possible
 
   @media #{$breakpoint-tablet-portrait} {
-    display: none;
+    display: none; // Hiding the nav
   }
 
   &-main {
@@ -55,20 +56,23 @@
       font-size: 1.5rem; // Text size 24px
       position: relative; // Needed for the circle placements behind element
       font-weight: 400;
-      transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out; // Transition settings
 
       @media #{$breakpoint-large} {
-        margin: 0 1rem;
+        margin: 0 1rem; // Spacing outside the element, top-bottom, left-right
       }
 
+      // Hover effect
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.1); // Hovering the nav items scales it 110%
       }
 
+      // Text thickness modifier class
       &--bold {
-        font-weight: 500;
+        font-weight: 500; // Text thickness
       }
 
+      // Round background of the nav items
       &::before {
         content: '';
         width: 3rem;
@@ -80,6 +84,7 @@
         inset: calc(50% - 1.5rem); // Placing in the middle, by calculating 50 minus the radius
       }
 
+      // Background color modifier class
       &--bg::before {
         background-color: #e1b9aa;
       }

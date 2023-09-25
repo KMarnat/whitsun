@@ -24,8 +24,9 @@
     &__name {
       margin: 0; // Spacing outside the element
       font-weight: 300; // Text thickness
+
       @media #{$breakpoint-mobile-landscape} {
-        font-size: 2.5rem;
+        font-size: 2.5rem; // Text size
       }
     }
   }
@@ -41,30 +42,32 @@
 
     // Grid item (artist)
     .artist {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
+      display: grid; // Activate grid
+      grid-template-columns: 2fr 1fr; // Grid layout
 
       @media #{$breakpoint-tablet-portrait} {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; // Grid layout
       }
 
+      // Grid style for the items that have inverted cells (illustration image first, then artist)
       &--inverse {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        display: grid; // Activate grid
+        grid-template-columns: 1fr 2fr; // Grid layout
+
         @media #{$breakpoint-tablet-portrait} {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr; // Grid layout
         }
       }
 
+      // Illustarion image next to the artist in their cells
       &__illustration {
         @media #{$breakpoint-tablet-portrait} {
-          display: none;
+          display: none; // Removing the illustration image
         }
       }
 
       img {
-        max-width: 100%;
-        height: auto;
+        max-width: 100%; // Take as much space as possible horizontally
       }
     }
   }

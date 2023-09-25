@@ -31,17 +31,17 @@
     &__list {
       display: flex; // Activate flexbox
       font-size: 1.75rem; // Text size
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid white; // Border under the element
       padding: 1rem 0; // Spacing inside the element, top and bottom
 
       @media #{$breakpoint-tablet-portrait} {
-        font-size: 1.25rem;
+        font-size: 1.25rem; // Changing text size
       }
 
       @media #{$breakpoint-mobile-landscape} {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 3rem;
+        flex-direction: column; // Changing direction of flex items into a column, on top of each other
+        align-items: center; // Centering on the cross axis
+        padding: 1rem 3rem; // Spacing inside the element
       }
 
       // List item
@@ -50,7 +50,10 @@
         position: relative; // Needed for dot placements between the items
 
         @media #{$breakpoint-tablet-portrait} {
-          margin-right: 1rem;
+          margin-right: 1rem; // Spacing outside the element. For the dot next to list items
+        }
+        @media #{$breakpoint-mobile-landscape} {
+          margin: 0; // Removing spacing outside the element
         }
 
         // Selecting last item
@@ -64,11 +67,11 @@
           margin-left: 2rem; // Spacing outside the element, left
 
           @media #{$breakpoint-tablet-portrait} {
-            margin-left: 1rem;
+            margin-left: 1rem; // Spacing outside the element, left side of the dot
           }
 
           @media #{$breakpoint-mobile-landscape} {
-            content: none;
+            content: none; // Removing the dot
           }
         }
 
@@ -86,8 +89,8 @@
     padding-top: 1.25rem; // Spacing inside the element, top
 
     @media #{$breakpoint-mobile-landscape} {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; // Changing direction of the flex items
+      align-items: center; // Aligning items center on cross axis
     }
 
     // Selecting all <p> elements
@@ -97,7 +100,7 @@
       font-size: 0.875rem; // Text size
 
       @media #{$breakpoint-mobile-landscape} {
-        margin: 0;
+        margin: 0; // Removing spacing outside the element
       }
 
       // Last <p> element in the container
@@ -112,8 +115,8 @@
         margin-left: 1rem; // Spacing outside the element, left. Needed for the positioning of the element
 
         @media #{$breakpoint-mobile-landscape} {
-          content: '';
-          margin-left: 0;
+          content: ''; // Removing the dot
+          margin-left: 0; // Removing spacing outside the element, left side
         }
       }
 

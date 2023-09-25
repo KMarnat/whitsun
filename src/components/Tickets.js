@@ -6,7 +6,7 @@ export default function Tickets() {
   return (
     <section className="festival">
       <div className="festival-title">
-        <img src={halfcirclegreen} className="festival-title__icon" />
+        <img src={halfcirclegreen} className="festival-title__icon" alt="title icon" />
         <h2 className="festival-title__name">
           <strong>FEST</strong>IVALBILLET
         </h2>
@@ -22,7 +22,7 @@ export default function Tickets() {
           {tickets.map((ticket, i) => (
             <div className="ticket" key={i}>
               <span className="ticket__background">
-                <img src={backgroundtubes} />
+                <img src={backgroundtubes} alt="ticket background" />
               </span>
               <h4 className="ticket__name">{ticket.name}</h4>
               <p className="ticket__price">
