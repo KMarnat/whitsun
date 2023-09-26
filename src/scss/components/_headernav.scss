@@ -1,0 +1,64 @@
+/* Headernav component
+---------------------*/
+.nav {
+  width: 100%; // Horizontally taking up as much space as possible
+
+  @media #{$breakpoint-tablet-portrait} {
+    display: none; // Hiding the nav
+  }
+
+  &--primary {
+    margin-left: 2rem; // Spacing outside the element on the left side
+  }
+
+  &--secondary {
+    margin-right: 4rem; // Spacing outside the element, right side
+
+    ul {
+      justify-content: end; // Placaing the element at the end of the flexbox
+    }
+  }
+
+  &__list {
+    display: flex; // Activate flexbox
+
+    .item {
+      margin: 0 3rem; // Spacing outside the element, right and left side
+      font-size: 1.5rem; // Text size 24px
+      position: relative; // Needed for the circle placements behind element
+      font-weight: 400;
+      transition: 0.3s ease-in-out; // Transition settings
+
+      @media #{$breakpoint-large} {
+        margin: 0 1rem; // Spacing outside the element, top-bottom, left-right
+      }
+
+      // Hover effect
+      &:hover {
+        transform: scale(1.1); // Hovering the nav items scales it 110%
+      }
+
+      // Text thickness modifier class
+      &--bold {
+        font-weight: 500; // Text thickness
+      }
+
+      // Round background of the nav items
+      &::before {
+        content: '';
+        width: 3rem;
+        height: 3rem;
+        background-color: var(--tertiary-bg-color);
+        position: absolute; // Letting the element place where it wants
+        z-index: -1; // Adjusting element placemnt on the Z index
+        border-radius: 50%; // Circular corners
+        inset: calc(50% - 1.5rem); // Placing in the middle, by calculating 50 minus the radius
+      }
+
+      // Background color modifier class
+      &--bg::before {
+        background-color: #e1b9aa;
+      }
+    }
+  }
+}

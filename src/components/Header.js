@@ -11,7 +11,7 @@ export default function Header() {
         <HeaderNav
           firstItem="billetter"
           secItem="artisterne"
-          className="nav-main"
+          className="nav--primary"
           modifier="item--bg"
         />
         <Link to={'/'}>
@@ -20,7 +20,7 @@ export default function Header() {
         <HeaderNav
           firstItem="spotify"
           secItem="search"
-          className="nav-secondary"
+          className="nav--secondary"
           modifier="item--bold"
         />
         <button className="header__tickets">

@@ -1,0 +1,52 @@
+/* FootCta component
+----------------------*/
+.cta {
+  display: flex; // Active flexbox
+  flex-direction: column; // Aligning items under each other
+  align-items: center; // Aligning items in the center on cross axis
+  margin: 0 0 10rem 0; // Spacing outside the element
+
+  // Title of the container
+  &__title {
+    text-transform: uppercase; // Capitalize letters
+    text-align: center;
+    font-weight: 300;
+  }
+
+  // Food list
+  &__list {
+    display: flex; // Activate flexbox
+    flex-direction: row; // Placing items next to each other
+
+    @media #{$breakpoint-mobile-landscape} {
+      flex-direction: column;
+    }
+  }
+
+  // Food item
+  &__item {
+    margin: 0 3rem; // Spacing outside the element
+
+    @media #{$breakpoint-tablet-portrait} {
+      margin: 0 1rem; // Spacing outside the element
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      margin-bottom: 1rem;
+    }
+
+    // Food image
+    img {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%; // Round corners
+      object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+      object-position: center center; // Positions the element in the center vertically and horizontally
+
+      @media #{$breakpoint-large} {
+        height: 10rem;
+        width: 10rem;
+      }
+    }
+  }
+}

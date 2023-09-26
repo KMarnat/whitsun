@@ -22,43 +22,54 @@ export default function MenuButton() {
         alt="background droplets"
       />
 
-      <ul className={`menu-list ${isActive ? 'menu-list--active' : ''}`}>
-        <Link to={'/billetter'} onClick={handleClick}>
-          <li className="item">
+      <ul className={`list ${isActive ? 'list--active' : ''}`}>
+        <li className="item">
+          <Link to={'/billetter'} onClick={handleClick} className="item__link">
             <span className="item__icon">
-              <img src={halfcircleleft} className="image half-circle-left" alt="menu item icon" />
+              <img
+                src={halfcircleleft}
+                className="item__image item__image--left"
+                alt="menu item icon"
+              />
             </span>
             <span className="item__title">Billetter</span>
             <span className="item__drop"></span>
-          </li>
-        </Link>
-        <Link to={'/artisterne'} onClick={handleClick}>
-          <li className="item">
+          </Link>
+        </li>
+        <li className="item">
+          <Link to={'/artisterne'} onClick={handleClick} className="item__link">
             <span className="item__icon">
-              <img src={circle} className="image circle" alt="menu item icon" />
+              <img src={circle} className="item__image circle" alt="menu item icon" />
             </span>
             <span className="item__title">Artisterne</span>
             <span className="item__drop"></span>
-          </li>
-        </Link>
-        <Link to={'/mad&drikke'} onClick={handleClick}>
-          <li className="item">
+          </Link>
+        </li>
+        <li className="item">
+          <Link to={'/mad&drikke'} onClick={handleClick} className="item__link">
             <span className="item__icon">
-              <img src={halfcirclebottom} className="image half-circle-bot" alt="menu item icon" />
+              <img
+                src={halfcirclebottom}
+                className="item__image item__image--bot"
+                alt="menu item icon"
+              />
             </span>
             <span className="item__title">Mad & Drikke</span>
             <span className="item__drop"></span>
-          </li>
-        </Link>
-        <li className="item">
-          <span className="item__icon">
-            <img src={circledot} className="image" alt="menu item icon" />
-          </span>
-          <span className="item__title">Frivillige</span>
-          <span className="item__drop"></span>
+          </Link>
         </li>
-        <Link to={'/info'} onClick={handleClick}>
-          <li className="item">
+        <li className="item">
+          <Link to={''} onClick={handleClick} className="item__link">
+            <span className="item__icon">
+              <img src={circledot} className="item__image" alt="menu item icon" />
+            </span>
+            <span className="item__title">Frivillige</span>
+            <span className="item__drop"></span>
+          </Link>
+        </li>
+
+        <li className="item">
+          <Link to={'/info'} onClick={handleClick} className="item__link">
             <span className="item__icon">
               <img
                 src="https://whitsun.dk/wp-content/uploads/2022/03/MenuIcon_info.png.webp"
@@ -67,21 +78,23 @@ export default function MenuButton() {
             </span>
             <span className="item__title">Information</span>
             <span className="item__drop"></span>
-          </li>
-        </Link>
+          </Link>
+        </li>
         <li className="item">
-          <span className="item__icon">
-            <img
-              src="https://whitsun.dk/wp-content/uploads/2022/09/Om.png.webp"
-              alt="menu item icon"
-            />
-          </span>
-          <span className="item__title">Om Whitsun</span>
-          <span className="item__drop"></span>
+          <Link to={''} onClick={handleClick} className="item__link">
+            <span className="item__icon">
+              <img
+                src="https://whitsun.dk/wp-content/uploads/2022/09/Om.png.webp"
+                alt="menu item icon"
+              />
+            </span>
+            <span className="item__title">Om Whitsun</span>
+            <span className="item__drop"></span>
+          </Link>
         </li>
       </ul>
 
-      <button className={`menu-btn ${isActive ? 'menu-btn--active' : ''}`} onClick={handleClick}>
+      <button className={`menu__btn ${isActive ? 'menu__btn--active' : ''}`} onClick={handleClick}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>

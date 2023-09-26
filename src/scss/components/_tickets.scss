@@ -9,7 +9,7 @@
   }
 
   // Section title
-  &-title {
+  &__title {
     display: flex; // Activate flex
     align-items: center; // Aligning center on cross axis
     margin-bottom: 2.5rem; // Spacing outside the element, bottom
@@ -19,7 +19,7 @@
     }
 
     // Icon in the section title
-    &__icon {
+    img {
       height: 5rem;
       margin-left: -1.2rem; // Spacing outside the element, negative value pulls it towards that side
       @media #{$breakpoint-mobile-landscape} {
@@ -28,7 +28,7 @@
     }
 
     // Title name
-    &__name {
+    h2 {
       margin: 0; // Removing spacing outside the element
       font-weight: 300; // Text thickness
 

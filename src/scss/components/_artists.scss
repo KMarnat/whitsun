@@ -9,19 +9,19 @@
   }
 
   // Title container of the section
-  &-title {
+  &__title {
     display: flex; // Activate flexbox
     margin-bottom: 2.5rem; // Spacing outside the element, bottom
     align-items: center; // Aligning items center on main axis
 
     // Icon next to the title
-    &__icon {
+    img {
       height: 5rem;
       margin-left: -1.2rem; // Pulling it left side
     }
 
-    // Title name
-    &__name {
+    // Section title name
+    h2 {
       margin: 0; // Spacing outside the element
       font-weight: 300; // Text thickness
 
@@ -41,7 +41,7 @@
     }
 
     // Grid item (artist)
-    .artist {
+    .single-artist {
       display: grid; // Activate grid
       grid-template-columns: 2fr 1fr; // Grid layout
 

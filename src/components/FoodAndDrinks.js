@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 
 export default function FoodAndDrinks() {
   return (
-    <section className="food">
-      <div className="food-title">
-        <img src={halfcirclegreen} className="food-title__icon" alt="title icon" />
-        <h2 className="food-title__name">MAD & DRIKKE</h2>
+    <section className="vendor">
+      <div className="vendor__title">
+        <img src={halfcirclegreen} alt="title icon" />
+        <h2>MAD & DRIKKE</h2>
       </div>
       <Outlet />
     </section>

@@ -25,60 +25,57 @@
     }
   }
 
-  // Container of the footer menu
-  &-nav {
-    // Container of the list items
-    &__list {
-      display: flex; // Activate flexbox
-      font-size: 1.75rem; // Text size
-      border-bottom: 1px solid white; // Border under the element
-      padding: 1rem 0; // Spacing inside the element, top and bottom
+  // Container of the list items
+  &__list {
+    display: flex; // Activate flexbox
+    font-size: 1.75rem; // Text size
+    border-bottom: 1px solid white; // Border under the element
+    padding: 1rem 0; // Spacing inside the element, top and bottom
+
+    @media #{$breakpoint-tablet-portrait} {
+      font-size: 1.25rem; // Changing text size
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      flex-direction: column; // Changing direction of flex items into a column, on top of each other
+      align-items: center; // Centering on the cross axis
+      padding: 1rem 3rem; // Spacing inside the element
+    }
+
+    // List item
+    li {
+      margin-right: 2rem; // Spacing outside the element, right
+      position: relative; // Needed for dot placements between the items
 
       @media #{$breakpoint-tablet-portrait} {
-        font-size: 1.25rem; // Changing text size
+        margin-right: 1rem; // Spacing outside the element. For the dot next to list items
       }
-
       @media #{$breakpoint-mobile-landscape} {
-        flex-direction: column; // Changing direction of flex items into a column, on top of each other
-        align-items: center; // Centering on the cross axis
-        padding: 1rem 3rem; // Spacing inside the element
+        margin: 0; // Removing spacing outside the element
       }
 
-      // List item
-      li {
-        margin-right: 2rem; // Spacing outside the element, right
-        position: relative; // Needed for dot placements between the items
+      // Selecting last item
+      &:last-of-type {
+        margin-right: 0; // Removing margin right
+      }
+
+      // Pseudoelement, dot between items
+      &:after {
+        content: '·'; // The dot between items
+        margin-left: 2rem; // Spacing outside the element, left
 
         @media #{$breakpoint-tablet-portrait} {
-          margin-right: 1rem; // Spacing outside the element. For the dot next to list items
+          margin-left: 1rem; // Spacing outside the element, left side of the dot
         }
+
         @media #{$breakpoint-mobile-landscape} {
-          margin: 0; // Removing spacing outside the element
-        }
-
-        // Selecting last item
-        &:last-of-type {
-          margin-right: 0; // Removing margin right
-        }
-
-        // Pseudoelement, dot between items
-        &:after {
-          content: '·'; // The dot between items
-          margin-left: 2rem; // Spacing outside the element, left
-
-          @media #{$breakpoint-tablet-portrait} {
-            margin-left: 1rem; // Spacing outside the element, left side of the dot
-          }
-
-          @media #{$breakpoint-mobile-landscape} {
-            content: none; // Removing the dot
-          }
-        }
-
-        // Pseudoelement of the last item
-        &:last-of-type:after {
           content: none; // Removing the dot
         }
+      }
+
+      // Pseudoelement of the last item
+      &:last-of-type:after {
+        content: none; // Removing the dot
       }
     }
   }

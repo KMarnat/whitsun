@@ -49,7 +49,7 @@ const artists = [
     imgTwo: artistFive,
     profileImg:
       'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
-    modifier: 'artist--inverse',
+    modified: true,
   },
   {
     name: 'Pernille Rosendahl',
@@ -57,7 +57,7 @@ const artists = [
     imgTwo: artistSix,
     profileImg:
       'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
-    modifier: 'artist--inverse',
+    modified: true,
   },
   {
     name: 'Signe Wennenberg',
@@ -65,7 +65,7 @@ const artists = [
     imgTwo: artistSeven,
     profileImg:
       'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
-    modifier: 'artist--inverse',
+    modified: true,
   },
   {
     name: 'Liselotte Lyngsø',
@@ -73,7 +73,7 @@ const artists = [
     imgTwo: artistEight,
     profileImg:
       'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg',
-    modifier: 'artist--inverse',
+    modified: true,
   },
 ];
 

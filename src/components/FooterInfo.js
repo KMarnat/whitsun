@@ -12,8 +12,8 @@ export default function FooterInfo() {
           <img src={instagram} alt="socials icon" />
         </a>
       </div>
-      <nav className="info-nav">
-        <ul className="info-nav__list">
+      <nav>
+        <ul className="info__list">
           <li>
             <a href="#">Foreninger</a>
           </li>

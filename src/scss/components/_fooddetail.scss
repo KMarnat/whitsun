@@ -1,10 +1,10 @@
 /* FoodDetail component
 ----------------------*/
-.food-detail {
+.cuisine {
   margin: 4rem auto 10rem; // Spacing outside the element
 
   // Conatiner of the image and description
-  .details {
+  &__info {
     display: grid; // Activate grid
     grid-template-columns: 1fr 3fr; // 2 columns
     max-width: 90rem; // Max size horizontally
@@ -13,120 +13,67 @@
     @media #{$breakpoint-tablet-portrait} {
       grid-template-columns: 1fr; // 2 columns
     }
+  }
 
-    // Description
-    &__about {
-      display: flex; // Activate flexbox
-      flex-direction: column; // Placing items below one another
-      justify-content: center; // Aligning items center on the main axis
-      padding: 0 3rem; // Spacing inside the element
-      color: var(--secondary-text-color);
-      background-color: white;
+  // Food image container
+  &__image {
+    background-color: #abb5af;
+    max-height: 30rem;
+    max-width: 30rem;
 
-      @media #{$breakpoint-mobile-portrait} {
-        padding: 0 1rem;
-      }
-
-      // Title of the food
-      &-name {
-        font-weight: 500; // Text thickness
-      }
+    @media #{$breakpoint-large} {
+      height: 20rem;
+      width: 20rem;
     }
 
-    // Food image container
-    &__image {
-      background-color: #abb5af;
-      max-height: 30rem;
-      max-width: 30rem;
+    @media #{$breakpoint-tablet-portrait} {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      display: flex;
+      justify-content: center;
+    }
+
+    // Food image
+    img {
+      margin-left: -2rem; // Negative spacing outside the element, pulling it left side
+      border-radius: 50%; // Round corners
+      height: 30rem;
+      width: 30rem;
+
+      object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+      object-position: center center; // Positions the element in the center vertically and horizontally
 
       @media #{$breakpoint-large} {
         height: 20rem;
         width: 20rem;
       }
-
-      @media #{$breakpoint-tablet-portrait} {
-        width: 100%;
-        height: 100%;
-      }
-
       @media #{$breakpoint-mobile-landscape} {
-        display: flex;
-        justify-content: center;
-      }
-
-      // Food image
-      img {
-        margin-left: -2rem; // Negative spacing outside the element, pulling it left side
-        border-radius: 50%; // Round corners
-        height: 30rem;
-        width: 30rem;
-
-        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
-        object-position: center center; // Positions the element in the center vertically and horizontally
-
-        @media #{$breakpoint-large} {
-          height: 20rem;
-          width: 20rem;
-        }
-        @media #{$breakpoint-mobile-landscape} {
-          margin: 0;
-          height: 10rem;
-          width: 10rem;
-          border-radius: 0;
-        }
+        margin: 0;
+        height: 10rem;
+        width: 10rem;
+        border-radius: 0;
       }
     }
   }
+  // Description
+  &__description {
+    display: flex; // Activate flexbox
+    flex-direction: column; // Placing items below one another
+    justify-content: center; // Aligning items center on the main axis
+    padding: 0 3rem; // Spacing inside the element
+    color: var(--secondary-text-color);
+    background-color: white;
 
-  // Food container
-  .food {
-    display: flex; // Active flexbox
-    flex-direction: column; // Aligning items under each other
-    align-items: center; // Aligning items in the center on cross axis
-    margin: 0 0 10rem 0; // Spacing outside the element
-
-    // Title of the container
-    &__title {
-      text-transform: uppercase; // Capitalize letters
-      text-align: center;
-      font-weight: 300;
+    @media #{$breakpoint-mobile-portrait} {
+      padding: 0 1rem;
     }
+  }
 
-    // Food list
-    &__list {
-      display: flex; // Activate flexbox
-      flex-direction: row; // Placing items next to each other
-
-      @media #{$breakpoint-mobile-landscape} {
-        flex-direction: column;
-      }
-    }
-
-    // Food item
-    &__item {
-      margin: 0 3rem; // Spacing outside the element
-
-      @media #{$breakpoint-tablet-portrait} {
-        margin: 0 1rem; // Spacing outside the element
-      }
-
-      @media #{$breakpoint-mobile-landscape} {
-        margin-bottom: 1rem;
-      }
-
-      // Food image
-      img {
-        height: 15rem;
-        width: 15rem;
-        border-radius: 50%; // Round corners
-        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
-        object-position: center center; // Positions the element in the center vertically and horizontally
-
-        @media #{$breakpoint-large} {
-          height: 10rem;
-          width: 10rem;
-        }
-      }
-    }
+  // Title of the food
+  &__name {
+    font-weight: 500; // Text thickness
   }
 }

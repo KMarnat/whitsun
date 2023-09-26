@@ -35,7 +35,7 @@ export default function FooterSponsors() {
       <div className="sponsors__slider">
         <Slider {...settings}>
           {sponsors.map((logo, index) => (
-            <div key={index} className="sponsors-logo">
+            <div key={index} className="sponsors__logo">
               <img src={logo} alt="sponsor logo" />
             </div>
           ))}

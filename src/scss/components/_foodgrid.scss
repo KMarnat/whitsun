@@ -1,6 +1,6 @@
 /* Food grid
 --------------*/
-.food__grid {
+.vendor__grid {
   display: grid; // Activate grid
   grid-template-columns: repeat(2, 1fr); // 2 columns, 1fr wide
 
@@ -9,7 +9,7 @@
   }
 
   //
-  .food-cell {
+  .vendor__item {
     display: grid;
     grid-template-columns: 2fr 1fr;
 
@@ -17,15 +17,15 @@
       grid-template-columns: 1fr;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     &__illustration {
       @media #{$breakpoint-tablet-portrait} {
         display: none;
       }
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
     }
   }
 }

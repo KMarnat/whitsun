@@ -5,9 +5,9 @@ import backgroundtubes from '../assets/backgroundtubes.svg';
 export default function Tickets() {
   return (
     <section className="festival">
-      <div className="festival-title">
-        <img src={halfcirclegreen} className="festival-title__icon" alt="title icon" />
-        <h2 className="festival-title__name">
+      <div className="festival__title">
+        <img src={halfcirclegreen} alt="title icon" />
+        <h2>
           <strong>FEST</strong>IVALBILLET
         </h2>
       </div>

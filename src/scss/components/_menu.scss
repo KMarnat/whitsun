@@ -14,7 +14,7 @@
     }
   }
 
-  &-btn {
+  &__btn {
     display: flex; // Activate flexbox
     flex-direction: column; // Stacking elements on top of each other
     justify-content: center; // Placing items in the center, main axis
@@ -116,7 +116,7 @@
   }
 
   // Menu list
-  &-list {
+  .list {
     display: flex; // Activate flexbox
     position: fixed; // Stays in place when scrolling
     // top: 50%; // Position from top
@@ -142,11 +142,7 @@
 
     //  Menu list item
     .item {
-      display: flex; // Activate flexbox
-      flex-direction: column; // Elements position under each other
-      align-items: center; // Placing items in the center, corss axis
       margin: 0 3rem; // Spacing outside the element, left and right
-      position: relative; // Needed for positioning of the droplet
 
       @media #{$breakpoint-xlarge} {
         margin: 0 2rem;
@@ -154,6 +150,24 @@
 
       @media #{$breakpoint-large} {
         margin: 0 1rem 5rem;
+      }
+
+      // Item link
+      &__link {
+        display: flex; // Activate flexbox
+        flex-direction: column; // Elements position under each other
+        align-items: center; // Placing items in the center, corss axis
+        position: relative; // Needed for positioning of the droplet
+
+        // When item is hovered, the droplet inside changes height
+        &:hover > .item__drop {
+          height: 10rem;
+        }
+
+        // When item is hovered, the font changes weight
+        &:hover > .item__title {
+          font-weight: 500; // Font thickness
+        }
       }
 
       // Icon inside each item
@@ -184,30 +198,18 @@
         transition: height 0.3s ease-in-out; // Specifying what is transitioning and the time
       }
 
-      // When item is hovered, the droplet inside changes height
-      &:hover > .item__drop {
-        height: 10rem;
-      }
-
-      // When item is hovered, the font changes weight
-      &:hover > .item__title {
-        font-weight: 500; // Font thickness
-      }
-
-      .image {
+      // List item icon image
+      &__image {
         width: 4rem;
         height: 4rem;
-      }
 
-      // Classes for specific icons in the menu items
-      .half-circle {
         // Selecting the icon that has the half circle visible on the left side
-        &-left {
+        &--left {
           margin-right: 2rem; // Spacing outside the element, right
         }
 
         // Selecting the icon that has the half circle visible on the bottom
-        &-bot {
+        &--bot {
           margin-top: 2rem; // Spacing outside the element, top
         }
       }

@@ -5,6 +5,7 @@
   flex-direction: column; // Centering on the main axis
   align-items: center; // Centering on the corss axis
 
+  // Container of the name and the icon next to the name
   &__name {
     display: flex; // Activate flexbox
     align-items: center; // Centering on the corss axis
@@ -15,21 +16,27 @@
     }
   }
 
-  // The "card" of the artist
-  &__details {
+  // Container of the artist's name and bio
+  &__description {
     display: grid; // Activate grid
-    grid-template-columns: 1fr 2fr; // 2 columns, 1fr width, 3fr width
-    grid-template-rows: 4fr 1fr; // 2 rows, 4fr heigh, 1fr height
+    grid-template-columns: 1fr 2fr; // 2 columns
+    grid-template-rows: 4fr 1fr; // 2 rows
     max-width: 90rem; // Max size horizontally
     margin: 3rem; // Spacing outside the element
 
     @media #{$breakpoint-large} {
-      grid-template-columns: fr;
+      grid-template-columns: 1fr; // 1 column, 1fr width
+      grid-template-rows: auto 5fr 1fr; // 3 rows
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      margin: 1rem; // Spacing outside the element
+      grid-template-rows: auto 4fr 1fr; // 3 rows
     }
   }
 
   // Container of the info about the artist
-  &__about {
+  &__bio {
     // Layout
     display: flex; // Activate flexbox
     flex-direction: column; // Aligning items under each other
@@ -37,17 +44,20 @@
     padding: 0 3rem; // Spacing inside the element
     position: relative; // Needed for positioning of the circles inside the container
     background-color: white;
-
     // Typo
     color: var(--secondary-text-color);
 
-    // Parahgraphs inside the about container
+    @media #{$breakpoint-mobile-landscape} {
+      padding: 1rem;
+    }
+
+    // Parahgraphs inside the biography container
     p {
       z-index: 3; // Position on the Z axis, lifting up so text isn't hidden behind the balls
     }
 
     // The big circle in the background
-    .background-circle {
+    .background__circle {
       position: absolute; // Needed for positioning
       inset: 0 0 auto 0; // Positioning to top left
       border-radius: 0 50% 50% 50%; // All corners round except top left
@@ -55,7 +65,7 @@
       height: 100%; // Takes up as much space as possible, vertically
       background-color: var(--main-bg-color);
 
-      @media #{$breakpoint-large} {
+      @media #{$breakpoint-mobile-landscape} {
         display: none;
       }
 
@@ -68,17 +78,55 @@
         height: 50%; // Takes up 50% of space, vertically
         background-color: #abb5af;
 
-        @media #{$breakpoint-large} {
+        @media #{$breakpoint-mobile-landscape} {
           display: none;
         }
       }
     }
   }
 
+  // Artist's image container
+  &__image {
+    background-color: #abb5af;
+    max-height: 30rem;
+    max-width: 30rem;
+
+    @media #{$breakpoint-large} {
+      max-width: 100%;
+      display: flex; // Actiate flex
+      justify-content: center; // Placing items center on the main axis
+      align-items: center; // Placing items center on the cross axis
+    }
+
+    @media #{$breakpoint-mobile-landscape} {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    // Artist's image
+    img {
+      margin-left: -2rem; // Negative space outside the element, pulling it left
+      border-radius: 50%; // Round corners
+      height: 30rem;
+      width: 30rem;
+      object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
+      object-position: center center; // Positions the element in the center vertically and horizontally
+
+      @media #{$breakpoint-large} {
+        margin: 0;
+      }
+
+      @media #{$breakpoint-mobile-landscape} {
+        max-height: 20rem;
+        max-width: 20rem;
+      }
+    }
+  }
+
   // Spotify info af the artist
-  &__spotify {
+  .spotify {
     // Logo under the artist image
-    &-logo {
+    &__logo {
       display: flex; // Activate flexbox
       align-items: center; // Aligning items center on the cross axis
       justify-content: center; // Aligning items center on the main axis
@@ -86,6 +134,13 @@
       border: 1px solid #c0c7c2;
       border-right: 0; // Removing border frmo the right side
       background-color: white;
+
+      @media #{$breakpoint-large} {
+        border: 1px solid #c0c7c2;
+        border-bottom: 0; // Removing border frmo the right side
+        width: 100%;
+        padding-top: 1rem;
+      }
 
       // Spotify logo img
       img {
@@ -105,13 +160,22 @@
     }
 
     // 'Top songs from artist' text container
-    &-top {
+    &__top {
       display: flex; // Activate flexbox
       align-self: center; // Aligning center on the cross axis
       height: 100%; // Take as much space as possible vertically
       border: 1px solid #c0c7c2;
       border-left: 0; // Removing border on left
       background-color: white;
+
+      @media #{$breakpoint-large} {
+        border: 1px solid #c0c7c2;
+        border-top: 0; // Removing border frmo the right side
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0;
+        text-align: center;
+      }
 
       // 'Top songs from artist' text
       h4 {
@@ -122,79 +186,6 @@
         // Typo
         font-size: 1.5rem;
         font-weight: 700;
-      }
-    }
-  }
-
-  // Artist image container
-  .image {
-    background-color: #abb5af;
-    height: auto;
-    @media #{$breakpoint-large} {
-    }
-
-    // Artist image
-    &__artist {
-      margin-left: -2rem; // Negative space outside the element, pulling it left
-      border-radius: 50%; // Round corners
-      height: 30rem;
-      width: 30rem;
-      object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
-      object-position: center center; // Positions the element in the center vertically and horizontally
-
-      @media #{$breakpoint-large} {
-        height: 20rem;
-        width: 20rem;
-      }
-    }
-  }
-
-  // Food container
-  .food {
-    margin: 0 0 10rem 0; // Spacing outside the element
-
-    // Title of the container
-    &__title {
-      text-transform: uppercase; // Capitalize text
-      text-align: center;
-      font-weight: 300; // Text thickness
-    }
-
-    // Food items
-    &__list {
-      display: flex; // Activate flexbox
-      flex-direction: row; // Aligning items next to each other
-
-      @media #{$breakpoint-mobile-landscape} {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    // Food item
-    &__item {
-      margin: 0 3rem; // Spacing outside the element
-
-      @media #{$breakpoint-tablet-portrait} {
-        margin: 0 1rem; // Spacing outside the element
-      }
-
-      @media #{$breakpoint-mobile-landscape} {
-        margin-bottom: 1rem;
-      }
-
-      // Food image
-      img {
-        height: 15rem;
-        width: 15rem;
-        border-radius: 50%; // Round corners
-        object-fit: cover; // To maintain its aspect ratio while filling the element's entire content box
-        object-position: center center; // Positions the element in the center vertically and horizontally
-
-        @media #{$breakpoint-large} {
-          height: 10rem;
-          width: 10rem;
-        }
       }
     }
   }
