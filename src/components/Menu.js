@@ -6,7 +6,7 @@ import circledot from '../assets/circle-dot.png';
 import backgroundtubes from '../assets/backgroundtubes.svg';
 import { Link } from 'react-router-dom';
 
-export default function MenuButton() {
+export default function Menu() {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {

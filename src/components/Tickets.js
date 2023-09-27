@@ -12,7 +12,7 @@ export default function Tickets() {
         </h2>
       </div>
       <div className="tickets">
-        <p className="tickets__description">
+        <p className="tickets__paragraph">
           Aenean tellus odio, varius sed ex ut, condimentum lobortis nibh. Aenean rhoncus urna sit
           amet vehicula pulvinar. In sit amet finibus odio. Aenean odio arcu, accumsan nec blandit
           vitae, interdum vel dolor. Fusce nunc mauris, porta vitae sapien sit amet, sodales lacinia
@@ -28,7 +28,7 @@ export default function Tickets() {
               <p className="ticket__price">
                 <span>{ticket.price}</span>
               </p>
-              <p className="ticket__desc">{ticket.desc}</p>
+              <p className="ticket__description">{ticket.desc}</p>
             </div>
           ))}
         </div>

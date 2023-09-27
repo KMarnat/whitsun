@@ -2,7 +2,7 @@ import HeaderNav from './HeaderNav.js';
 import Logo from '../assets/whitsunLogo.webp';
 import ticketgreen from '../assets/ticket-green.png';
 import { Link } from 'react-router-dom';
-import MenuButton from './Menu.js';
+import Menu from './Menu.js';
 
 export default function Header() {
   return (
@@ -27,7 +27,7 @@ export default function Header() {
           <img src={ticketgreen} alt="header tickets" />
         </button>
       </div>
-      <MenuButton />
+      <Menu />
     </>
   );
 }

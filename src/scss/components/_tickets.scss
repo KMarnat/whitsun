@@ -44,7 +44,7 @@
     margin: 0 auto; // Spacing outide the element, auto for left-right centers the element
 
     // Paragraph of the caontainer
-    &__description {
+    &__paragraph {
       max-width: 30rem; // Max size taken horizontally
       color: var(--secondary-text-color);
     }
@@ -144,7 +144,7 @@
         }
 
         // Description of the ticket
-        &__desc {
+        &__description {
           line-height: 1rem; // Heigt of each line of text
           margin: 0; // Removing spacing outside the element
         }
