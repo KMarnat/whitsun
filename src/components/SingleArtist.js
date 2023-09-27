@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import halfcirclegreen from '../assets/half-circle-green.png';
+
 import artists from '../artists';
 import spotifylogo from '../assets/spotify-logo.svg';
 import FoodCta from './FoodCta';
@@ -11,16 +11,15 @@ export default function SingleArtist() {
 
   return (
     <article className="artist">
-      <div className="artist__name">
-        <img src={halfcirclegreen} alt="title icon" />
-        <h2>{artistName}</h2>
+      <div className="artist__title">
+        <h1 className="artist__name">{artistName}</h1>
       </div>
-      <div className="artist__description">
+      <div className="artist__grid">
         <div className="artist__image">
           <img src={artist.profileImg} alt="artist" />
         </div>
 
-        <div className="artist__bio">
+        <div className="artist__description">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id turpis non ante
             pellentesque bibendum et in mi. Mauris id hendrerit tortor. Donec ut rhoncus justo.
@@ -36,15 +35,15 @@ export default function SingleArtist() {
             eros, sit amet malesuada enim pretium a. Nulla finibus ornare ligula sit amet faucibus.
             Donec porta accumsan dignissim.
           </p>
-          <span className="background__circle"></span>
-          <span className="background__circle--dark"></span>
         </div>
-        <div className="spotify__logo">
-          <img src={spotifylogo} alt="spotify" />
-          <h2>Spotify</h2>
-        </div>
-        <div className="spotify__top">
-          <h4>Top 10 melodier fra {artistName}</h4>
+        <div className="spotify">
+          <div className="spotify__logo">
+            <img src={spotifylogo} alt="spotify" />
+            <h2>Spotify</h2>
+          </div>
+          <div className="spotify__cta">
+            <h2>Top 10 melodier fra {artistName}</h2>
+          </div>
         </div>
       </div>
       <FoodCta />

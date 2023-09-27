@@ -2,7 +2,7 @@
 ------------------*/
 .ad {
   max-width: 80rem; // Setting maxiumum width, size horizontally
-  margin: 5rem auto 5rem; // Spacing outside the element - top, left-right, bottom
+  margin: 4rem auto 5rem; // Spacing outside the element - top, left-right, bottom
 
   @media #{$breakpoint-xxlarge} {
     max-width: 60rem;

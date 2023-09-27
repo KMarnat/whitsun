@@ -1,10 +1,17 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import HeaderNav from './HeaderNav.js';
 import Logo from '../assets/whitsunLogo.webp';
 import ticketgreen from '../assets/ticket-green.png';
-import { Link } from 'react-router-dom';
 import Menu from './Menu.js';
 
 export default function Header() {
+  const [isActive, setIsActive] = useState(false);
+
+  function handleClick() {
+    isActive && setIsActive(!isActive);
+  }
+
   return (
     <>
       <div className="header">
@@ -13,8 +20,9 @@ export default function Header() {
           secItem="artisterne"
           className="nav--primary"
           modifier="item--bg"
+          onClick={handleClick}
         />
-        <Link to={'/'}>
+        <Link to={'/'} onClick={handleClick}>
           <img src={Logo} alt="logo" />
         </Link>
         <HeaderNav
@@ -22,12 +30,13 @@ export default function Header() {
           secItem="search"
           className="nav--secondary"
           modifier="item--bold"
+          onClick={handleClick}
         />
         <button className="header__tickets">
           <img src={ticketgreen} alt="header tickets" />
         </button>
       </div>
-      <Menu />
+      <Menu isActive={isActive} setIsActive={setIsActive} />
     </>
   );
 }

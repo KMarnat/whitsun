@@ -15,19 +15,23 @@
     align-items: center; // Aligning items center on main axis
 
     // Icon next to the title
-    img {
-      height: 5rem;
-      margin-left: -1.2rem; // Pulling it left side
+    &::before {
+      content: '';
+      background-image: url('../../assets/half-circle-green.png');
+      background-repeat: no-repeat;
+      height: 6rem;
+      width: 6rem;
+      margin-left: -1.5rem; // Pulling it left side
     }
+  }
 
-    // Section title name
-    h2 {
-      margin: 0; // Spacing outside the element
-      font-weight: 300; // Text thickness
+  // Section title name
+  &__name {
+    margin: 0; // Spacing outside the element
+    font-weight: 300; // Text thickness
 
-      @media #{$breakpoint-mobile-landscape} {
-        font-size: 2.5rem; // Text size
-      }
+    @media #{$breakpoint-mobile-landscape} {
+      font-size: 2.5rem; // Text size
     }
   }
 

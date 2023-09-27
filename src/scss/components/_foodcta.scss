@@ -4,13 +4,13 @@
   display: flex; // Active flexbox
   flex-direction: column; // Aligning items under each other
   align-items: center; // Aligning items in the center on cross axis
-  margin: 0 0 10rem 0; // Spacing outside the element
 
   // Title of the container
   &__title {
     text-transform: uppercase; // Capitalize letters
     text-align: center;
     font-weight: 300;
+    margin-bottom: 3rem;
   }
 
   // Food list
@@ -26,6 +26,7 @@
   // Food item
   &__item {
     margin: 0 3rem; // Spacing outside the element
+    cursor: pointer;
 
     @media #{$breakpoint-tablet-portrait} {
       margin: 0 1rem; // Spacing outside the element

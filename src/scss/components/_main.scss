@@ -4,14 +4,16 @@
   position: relative; // Needed for positioning
 
   .banner {
-    height: 51rem;
+    .adaptive-photo {
+      height: 51rem;
 
-    @media #{$breakpoint-tablet-portrait} {
-      height: 40rem;
-    }
+      @media #{$breakpoint-tablet-portrait} {
+        height: 40rem;
+      }
 
-    img {
-      transition: 0.3s ease-in-out; // Banner image animation settings
+      img {
+        transition: 0.3s ease-in-out; // Banner image animation settings
+      }
     }
 
     &__logo {

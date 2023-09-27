@@ -9,17 +9,19 @@ export default function FoodDetail() {
 
   return (
     <section className="cuisine">
-      <div className="cuisine__info">
+      <div className="cuisine__grid">
         <div className="cuisine__image">
           <img src={food.detailImg} alt="food" />
         </div>
         <div className="cuisine__description">
           <h4 className="cuisine__name">{food.name}</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id turpis non ante
-            pellentesque bibendum et in mi. Mauris id hendrerit tortor. Donec ut rhoncus justo.
-            Integer eleifend maximus metus a tincidunt.
-          </p>
+          <div className="cuisine__info">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id turpis non ante
+              pellentesque bibendum et in mi. Mauris id hendrerit tortor. Donec ut rhoncus justo.
+              Integer eleifend maximus metus a tincidunt.
+            </p>
+          </div>
         </div>
       </div>
       <FoodCta />

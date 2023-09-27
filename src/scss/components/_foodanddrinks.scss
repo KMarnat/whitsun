@@ -15,20 +15,29 @@
     margin-bottom: 2.5rem; // Spacing outside the element, bottom
 
     // Icon next to the title
+    &::before {
+      content: '';
+      background-image: url('../../assets/half-circle-green.png');
+      background-repeat: no-repeat;
+      transform: rotate(90deg); // Rotating it 90 degrees
+      height: 6rem;
+      width: 6rem;
+    }
+
+    // Icon next to the title
     img {
       transform: rotate(90deg); // Rotating it 90 degrees
       height: 5rem;
       margin-left: -1.2rem; // Pulling it left side
     }
+  }
+  // Section title name
+  &__name {
+    margin: 0 0 0 1.5rem; // Spacing outside the element
+    font-weight: 400; // Font thickness
 
-    // Section title name
-    h2 {
-      margin: 0 0 0 1.5rem; // Spacing outside the element
-      font-weight: 400; // Font thickness
-
-      @media #{$breakpoint-mobile-landscape} {
-        font-size: 2.5rem; // Text size
-      }
+    @media #{$breakpoint-mobile-landscape} {
+      font-size: 2.5rem; // Text size
     }
   }
 }

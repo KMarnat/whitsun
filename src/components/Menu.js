@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import halfcircleleft from '../assets/half-circle-left.png';
 import circle from '../assets/circle.png';
 import halfcirclebottom from '../assets/half-circle-bottom.png';
@@ -6,9 +5,7 @@ import circledot from '../assets/circle-dot.png';
 import backgroundtubes from '../assets/backgroundtubes.svg';
 import { Link } from 'react-router-dom';
 
-export default function Menu() {
-  const [isActive, setIsActive] = useState(false);
-
+export default function Menu({ isActive, setIsActive }) {
   const handleClick = () => {
     setIsActive((isActive) => !isActive);
   };

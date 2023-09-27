@@ -1,4 +1,3 @@
-import halfcirclegreen from '../assets/half-circle-green.png';
 import artists from '../artists';
 import { Link } from 'react-router-dom';
 
@@ -6,10 +5,9 @@ export default function Artists() {
   return (
     <section className="artists">
       <div className="artists__title">
-        <img src={halfcirclegreen} alt="Title icon" />
-        <h2>
+        <h1 className="artists__name">
           <strong>ART</strong>ISTERNE
-        </h2>
+        </h1>
       </div>
       <div className="artists__grid">
         {artists.map((artist, i) => (

@@ -2,7 +2,7 @@
 ---------------------*/
 .festival {
   max-width: 100rem; // Maximum space taken horizontally
-  margin: 0 auto 10rem; // Spacing outside the element, auto for left-right centers the element
+  margin: 4rem auto 10rem; // Spacing outside the element, auto for left-right centers the element
 
   @media (max-width: 100rem) {
     margin: 1rem 2rem 10rem; // Spacing outside the element, top-bottom, left-right
@@ -18,6 +18,16 @@
       margin-top: 4rem; // Spacing outside the element, top
     }
 
+    // Icon next to the title
+    &::before {
+      content: '';
+      background-image: url('../../assets/half-circle-green.png');
+      background-repeat: no-repeat;
+      height: 6rem;
+      width: 6rem;
+      margin-left: -1.5rem; // Pulling it left side
+    }
+
     // Icon in the section title
     img {
       height: 5rem;
@@ -26,15 +36,15 @@
         height: 3rem;
       }
     }
+  }
 
-    // Title name
-    h2 {
-      margin: 0; // Removing spacing outside the element
-      font-weight: 300; // Text thickness
+  // Title name
+  &__name {
+    margin: 0; // Removing spacing outside the element
+    font-weight: 300; // Text thickness
 
-      @media #{$breakpoint-mobile-landscape} {
-        font-size: 2.5rem; // Text size
-      }
+    @media #{$breakpoint-mobile-landscape} {
+      font-size: 2.5rem; // Text size
     }
   }
 
@@ -125,7 +135,7 @@
         // Ticket title
         &__name {
           // Layout
-          margin: 0; // Removing spacing outside the element
+          margin: 0 0 0.5rem 0; // Removing spacing outside the element
 
           // Typo
           font-size: 1.5rem; // Text size
@@ -133,20 +143,15 @@
 
         // Ticket price
         &__price {
-          margin: 0.5rem 0; // Spacing outside the element
-
-          // Needed to change background of the ticket price
-          span {
-            color: var(--secondary-text-color);
-            background-color: #ffe6b9;
-            padding: 0.3rem; // Spacing inside the element
-          }
+          color: var(--secondary-text-color);
+          background-color: #ffe6b9;
+          padding: 0.3rem; // Spacing inside the element
         }
 
         // Description of the ticket
         &__description {
           line-height: 1rem; // Heigt of each line of text
-          margin: 0; // Removing spacing outside the element
+          margin: 0.5rem 0 0 0; // Removing spacing outside the element
         }
 
         // Illustration in the background of the ticket

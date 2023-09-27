@@ -6,10 +6,9 @@ export default function Tickets() {
   return (
     <section className="festival">
       <div className="festival__title">
-        <img src={halfcirclegreen} alt="title icon" />
-        <h2>
+        <h1 className="festival__name">
           <strong>FEST</strong>IVALBILLET
-        </h2>
+        </h1>
       </div>
       <div className="tickets">
         <p className="tickets__paragraph">
@@ -25,9 +24,9 @@ export default function Tickets() {
                 <img src={backgroundtubes} alt="ticket background" />
               </span>
               <h4 className="ticket__name">{ticket.name}</h4>
-              <p className="ticket__price">
-                <span>{ticket.price}</span>
-              </p>
+
+              <span className="ticket__price">{ticket.price}</span>
+
               <p className="ticket__description">{ticket.desc}</p>
             </div>
           ))}

@@ -4,29 +4,44 @@
   display: flex; // Activate flexbox
   flex-direction: column; // Centering on the main axis
   align-items: center; // Centering on the corss axis
+  margin: 4rem 0 10rem;
 
   // Container of the name and the icon next to the name
-  &__name {
+  &__title {
     display: flex; // Activate flexbox
     align-items: center; // Centering on the corss axis
 
-    // Name
-    h2 {
-      margin: 0; // Removing spacing outside the element
+    // Icon next to the title
+    &::before {
+      content: '';
+      background-image: url('../../assets/half-circle-green.png');
+      background-repeat: no-repeat;
+      height: 6rem;
+      width: 6rem;
+      margin-left: -1.5rem; // Pulling it left side
+    }
+  }
+
+  // Name
+  &__name {
+    margin: 0; // Removing spacing outside the element
+
+    @media #{$breakpoint-tablet-portrait} {
+      font-size: 3rem;
     }
   }
 
   // Container of the artist's name and bio
-  &__description {
+  &__grid {
     display: grid; // Activate grid
     grid-template-columns: 1fr 2fr; // 2 columns
     grid-template-rows: 4fr 1fr; // 2 rows
     max-width: 90rem; // Max size horizontally
-    margin: 3rem; // Spacing outside the element
+    margin: 3rem 3rem 5rem; // Spacing outside the element
 
     @media #{$breakpoint-large} {
       grid-template-columns: 1fr; // 1 column, 1fr width
-      grid-template-rows: auto 5fr 1fr; // 3 rows
+      grid-template-rows: auto 5fr 2fr; // 3 rows
     }
 
     @media #{$breakpoint-mobile-landscape} {
@@ -36,7 +51,7 @@
   }
 
   // Container of the info about the artist
-  &__bio {
+  &__description {
     // Layout
     display: flex; // Activate flexbox
     flex-direction: column; // Aligning items under each other
@@ -46,6 +61,10 @@
     background-color: white;
     // Typo
     color: var(--secondary-text-color);
+
+    @media #{$breakpoint-large} {
+      grid-row: 2; // Changing the rox of the element
+    }
 
     @media #{$breakpoint-mobile-landscape} {
       padding: 1rem;
@@ -57,30 +76,34 @@
     }
 
     // The big circle in the background
-    .background__circle {
+    &::before {
+      content: '';
       position: absolute; // Needed for positioning
       inset: 0 0 auto 0; // Positioning to top left
       border-radius: 0 50% 50% 50%; // All corners round except top left
       aspect-ratio: 1/1; // Keeps the span circular
       height: 100%; // Takes up as much space as possible, vertically
+      max-width: 100%; // Doesn't go outside the grid cell when viewing on smaller screens
       background-color: var(--main-bg-color);
 
       @media #{$breakpoint-mobile-landscape} {
-        display: none;
+        display: none; // Hiding the element
       }
+    }
 
-      // The smaller circle in the background
-      &--dark {
-        position: absolute; // Needed for positioning
-        inset: 0 0 auto 0; // Positioning to top left
-        border-radius: 0 50% 50% 50%; // All corners round except top left
-        aspect-ratio: 1/1; // Keeps the span circular
-        height: 50%; // Takes up 50% of space, vertically
-        background-color: #abb5af;
+    // The smaller circle in the background
+    &::after {
+      content: '';
+      position: absolute; // Needed for positioning
+      inset: 0 0 auto 0; // Positioning to top left
+      border-radius: 0 50% 50% 50%; // All corners round except top left
+      aspect-ratio: 1/1; // Keeps the span circular
+      height: 50%; // Takes up 50% of space, vertically
+      max-width: 100%; // Doesn't go outside the grid cell when viewing on smaller screens
+      background-color: #abb5af;
 
-        @media #{$breakpoint-mobile-landscape} {
-          display: none;
-        }
+      @media #{$breakpoint-mobile-landscape} {
+        display: none; // Hiding the element
       }
     }
   }
@@ -113,7 +136,7 @@
       object-position: center center; // Positions the element in the center vertically and horizontally
 
       @media #{$breakpoint-large} {
-        margin: 0;
+        margin: 0; // Removing spacing outside the element
       }
 
       @media #{$breakpoint-mobile-landscape} {
@@ -125,67 +148,62 @@
 
   // Spotify info af the artist
   .spotify {
+    grid-column: span 2; // Merging the cells in grid
+    display: flex; // Activate flexbox
+    width: 100%; // Take as much space as possible horizontally
+    border: 1px solid #c0c7c2;
+    background-color: white;
+
     // Logo under the artist image
     &__logo {
       display: flex; // Activate flexbox
       align-items: center; // Aligning items center on the cross axis
       justify-content: center; // Aligning items center on the main axis
       width: 30rem;
-      border: 1px solid #c0c7c2;
-      border-right: 0; // Removing border frmo the right side
-      background-color: white;
 
       @media #{$breakpoint-large} {
-        border: 1px solid #c0c7c2;
-        border-bottom: 0; // Removing border frmo the right side
-        width: 100%;
-        padding-top: 1rem;
+        width: 100%; // Take as much space as possible horizontally
       }
 
       // Spotify logo img
       img {
         height: 3rem;
+        cursor: pointer; // Imitating anchor tag
       }
 
       // Spotify company name
       h2 {
         // Layout
         color: var(--secondary-text-color);
-        margin: 0;
+        margin: 0; // Removing spacing outside the element
+        cursor: pointer; // Imitating anchor tag
 
         // Typo
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 2rem; // Text size
+        font-weight: 700; // Text thickness
       }
     }
 
     // 'Top songs from artist' text container
-    &__top {
-      display: flex; // Activate flexbox
-      align-self: center; // Aligning center on the cross axis
+    &__cta {
+      display: flex;
       height: 100%; // Take as much space as possible vertically
-      border: 1px solid #c0c7c2;
-      border-left: 0; // Removing border on left
-      background-color: white;
 
       @media #{$breakpoint-large} {
-        border: 1px solid #c0c7c2;
-        border-top: 0; // Removing border frmo the right side
         width: 100%;
         justify-content: center;
-        margin: 1rem 0;
         text-align: center;
       }
 
       // 'Top songs from artist' text
-      h4 {
+      h2 {
         // Layout
-        align-self: center;
-        margin: 0 0 0 1rem;
+        align-self: center; // Aligning center on the corss axis
+        margin: 0; // Removing spacing around the element
 
         // Typo
-        font-size: 1.5rem;
-        font-weight: 700;
+        font-size: 1.5rem; // Text size
+        font-weight: 700; // Text thickness
       }
     }
   }

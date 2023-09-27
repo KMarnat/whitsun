@@ -12,21 +12,21 @@ export default function FooterInfo() {
           <img src={instagram} alt="socials icon" />
         </a>
       </div>
-      <nav>
+      <nav className="info__nav">
         <ul className="info__list">
-          <li>
+          <li className="item">
             <a href="#">Foreninger</a>
           </li>
-          <li>
+          <li className="item">
             <a href="#">FAQ</a>
           </li>
-          <li>
+          <li className="item">
             <a href="#">Presse</a>
           </li>
-          <li>
+          <li className="item">
             <a href="#">Cookie</a>
           </li>
-          <li>
+          <li className="item">
             <a href="#">Privatliv</a>
           </li>
         </ul>

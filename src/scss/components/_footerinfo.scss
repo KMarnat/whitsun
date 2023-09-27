@@ -43,7 +43,7 @@
     }
 
     // List item
-    li {
+    .item {
       margin-right: 2rem; // Spacing outside the element, right
       position: relative; // Needed for dot placements between the items
 
@@ -103,6 +103,7 @@
       // Last <p> element in the container
       &:last-of-type {
         margin-right: 0; // Spacing around the element, right
+        cursor: pointer; // Imitate anchor tag
       }
 
       // Pseudoelement, dot after every <p>

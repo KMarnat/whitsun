@@ -4,7 +4,7 @@
   margin: 4rem auto 10rem; // Spacing outside the element
 
   // Conatiner of the image and description
-  &__info {
+  &__grid {
     display: grid; // Activate grid
     grid-template-columns: 1fr 3fr; // 2 columns
     max-width: 90rem; // Max size horizontally
