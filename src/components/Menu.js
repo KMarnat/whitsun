@@ -19,9 +19,9 @@ export default function Menu({ isActive, setIsActive }) {
         alt="background droplets"
       />
 
-      <ul className={`list ${isActive ? 'list--active' : ''}`}>
-        <li className="item">
-          <Link to={'/billetter'} onClick={handleClick} className="item__link">
+      <ul className={`menu__list ${isActive ? 'menu__list--active' : ''}`}>
+        <li className="menu__item">
+          <Link to={'/billetter'} onClick={handleClick} className="item">
             <span className="item__icon">
               <img
                 src={halfcircleleft}
@@ -33,8 +33,8 @@ export default function Menu({ isActive, setIsActive }) {
             <span className="item__drop"></span>
           </Link>
         </li>
-        <li className="item">
-          <Link to={'/artisterne'} onClick={handleClick} className="item__link">
+        <li className="menu__item">
+          <Link to={'/artisterne'} onClick={handleClick} className="item">
             <span className="item__icon">
               <img src={circle} className="item__image circle" alt="menu item icon" />
             </span>
@@ -42,8 +42,8 @@ export default function Menu({ isActive, setIsActive }) {
             <span className="item__drop"></span>
           </Link>
         </li>
-        <li className="item">
-          <Link to={'/mad&drikke'} onClick={handleClick} className="item__link">
+        <li className="menu__item">
+          <Link to={'/mad&drikke'} onClick={handleClick} className="item">
             <span className="item__icon">
               <img
                 src={halfcirclebottom}
@@ -55,8 +55,8 @@ export default function Menu({ isActive, setIsActive }) {
             <span className="item__drop"></span>
           </Link>
         </li>
-        <li className="item">
-          <Link to={''} onClick={handleClick} className="item__link">
+        <li className="menu__item">
+          <Link to={''} onClick={handleClick} className="item">
             <span className="item__icon">
               <img src={circledot} className="item__image" alt="menu item icon" />
             </span>
@@ -65,8 +65,8 @@ export default function Menu({ isActive, setIsActive }) {
           </Link>
         </li>
 
-        <li className="item">
-          <Link to={'/info'} onClick={handleClick} className="item__link">
+        <li className="menu__item">
+          <Link to={'/info'} onClick={handleClick} className="item">
             <span className="item__icon">
               <img
                 src="https://whitsun.dk/wp-content/uploads/2022/03/MenuIcon_info.png.webp"
@@ -77,8 +77,8 @@ export default function Menu({ isActive, setIsActive }) {
             <span className="item__drop"></span>
           </Link>
         </li>
-        <li className="item">
-          <Link to={''} onClick={handleClick} className="item__link">
+        <li className="menu__item">
+          <Link to={''} onClick={handleClick} className="item">
             <span className="item__icon">
               <img
                 src="https://whitsun.dk/wp-content/uploads/2022/09/Om.png.webp"

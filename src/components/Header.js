@@ -19,7 +19,7 @@ export default function Header() {
           firstItem="billetter"
           secItem="artisterne"
           className="nav--primary"
-          modifier="item--bg"
+          modifier="nav__item--bg"
           onClick={handleClick}
         />
         <Link to={'/'} onClick={handleClick}>
@@ -29,7 +29,7 @@ export default function Header() {
           firstItem="spotify"
           secItem="search"
           className="nav--secondary"
-          modifier="item--bold"
+          modifier="nav__item--bold"
           onClick={handleClick}
         />
         <button className="header__tickets">

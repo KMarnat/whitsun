@@ -2,15 +2,15 @@
 ----------------------*/
 .menu {
   // position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; // Activate flexbox
+  align-items: center; // Align items center on the cross axis
+  justify-content: center; // Align items center on the main axis
 
   &--active {
-    height: calc(100vh - 10rem);
+    height: calc(100vh - 10rem); // Positioning of the menu when its opened
 
     @media #{$breakpoint-tablet-portrait} {
-      height: calc(100vh - 7rem);
+      height: calc(100vh - 7rem); // Positioning of the menu on smaller screens
     }
   }
 
@@ -28,12 +28,14 @@
     background-color: var(--tertiary-bg-color);
     z-index: 13; // Position on the Z axis
 
+    // Moving the button closer to the the top right corner on smaller screens
     @media #{$breakpoint-tablet-portrait} {
       top: 7rem;
       width: 4rem;
       height: 4rem;
     }
 
+    // The line in the menu button that makes up the hamburger menu
     .bar {
       background-color: var(--secondary-bg-color);
       height: 0.1rem;
@@ -116,7 +118,7 @@
   }
 
   // Menu list
-  .list {
+  &__list {
     display: flex; // Activate flexbox
     position: fixed; // Stays in place when scrolling
     // top: 50%; // Position from top
@@ -139,37 +141,35 @@
       z-index: 12; // Position on Z axis is moved up
       transition-delay: 0.1s; // Transition is delayed 0.1s to first let the background slide over the screen
     }
+  }
+  //  Menu list item
+  &__item {
+    margin: 0 3rem; // Spacing outside the element, left and right
 
-    //  Menu list item
+    @media #{$breakpoint-xlarge} {
+      margin: 0 2rem;
+    }
+
+    @media #{$breakpoint-large} {
+      margin: 0 1rem 5rem;
+    }
+
+    // Item link
     .item {
-      margin: 0 3rem; // Spacing outside the element, left and right
+      display: flex; // Activate flexbox
+      flex-direction: column; // Elements position under each other
+      align-items: center; // Placing items in the center, corss axis
+      position: relative; // Needed for positioning of the droplet
 
-      @media #{$breakpoint-xlarge} {
-        margin: 0 2rem;
+      // When item is hovered, the droplet inside changes height
+      &:hover > .item__drop {
+        height: 10rem;
       }
 
-      @media #{$breakpoint-large} {
-        margin: 0 1rem 5rem;
+      // When item is hovered, the font changes weight
+      &:hover > .item__title {
+        font-weight: 500; // Font thickness
       }
-
-      // Item link
-      &__link {
-        display: flex; // Activate flexbox
-        flex-direction: column; // Elements position under each other
-        align-items: center; // Placing items in the center, corss axis
-        position: relative; // Needed for positioning of the droplet
-
-        // When item is hovered, the droplet inside changes height
-        &:hover > .item__drop {
-          height: 10rem;
-        }
-
-        // When item is hovered, the font changes weight
-        &:hover > .item__title {
-          font-weight: 500; // Font thickness
-        }
-      }
-
       // Icon inside each item
       &__icon {
         display: flex; // Activate flexbox
@@ -181,12 +181,14 @@
         border-radius: 50%; // Round corners
       }
 
+      // Title of the button
       &__title {
         font-family: 'Source Sans 3', sans-serif; // Changing font
         margin-top: 1rem; // Spacing outside the element, top
         font-weight: 700; // Font thickness
       }
 
+      // Element that is animated when hovering the button
       &__drop {
         background-color: white;
         height: 3rem;
@@ -216,29 +218,29 @@
     }
   }
 
-  // Illustration image when menu is opened
+  // Illustration image when menu is opened (droplets on the background)
   &__illustration {
     position: fixed; // Doesn't change position when scrolling
     z-index: -1; // Position on the Z index
     margin: 0 20rem; // Spacing outside the element, left and right
     transition: opacity 0.5s; // Specifying what is transitioning and the time
     opacity: 0; // Invisible
-    top: 10rem;
+    top: 10rem; // Position from the top
 
     @media #{$breakpoint-xlarge} {
-      margin: 0 10rem;
+      margin: 0 10rem; // Spacing outside the element, top-bottom, left-right
     }
 
     @media #{$breakpoint-large} {
-      margin: 0 6rem;
+      margin: 0 6rem; // Spacing outside the element, top-bottom, left-right
     }
 
     @media #{$breakpoint-tablet-portrait} {
-      top: 7rem;
+      top: 7rem; // Position from the top
     }
 
     @media #{$breakpoint-mobile-landscape} {
-      margin: 0 4rem;
+      margin: 0 4rem; // Spacing outside the element, top-bottom, left-right
     }
 
     // When menu is opened

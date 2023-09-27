@@ -4,13 +4,13 @@ export default function HeaderNav({ firstItem, secItem, className, modifier, onC
   return (
     <nav className={`nav ${className}`}>
       <ul className="nav__list">
-        <li className={`item ${modifier}`}>
+        <li className={`nav__item ${modifier}`}>
           <Link to={`/${firstItem}`} onClick={onClick}>
             {firstItem}
           </Link>
         </li>
 
-        <li className="item">
+        <li className="nav__item">
           <Link to={`/${secItem}`} onClick={onClick}>
             {secItem}
           </Link>

@@ -8,23 +8,24 @@
     grid-template-columns: repeat(1, 1fr); // 2 columns, each 1fr wide
   }
 
-  //
+  // Grid cell of food item
   .vendor__item {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: grid; // Activate grid
+    grid-template-columns: 2fr 1fr; // Grid layout of each item
 
     @media #{$breakpoint-tablet-portrait} {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; // Changing into 1 grid column. All items stacked on top of each other
     }
 
+    // Main food image
     img {
-      max-width: 100%;
-      height: auto;
+      max-width: 100%; // Takes as much space as possible in the grid cell, horizontally
     }
 
+    // Illustration next to the food image
     &__illustration {
       @media #{$breakpoint-tablet-portrait} {
-        display: none;
+        display: none; // Hiding the illustration
       }
     }
   }
