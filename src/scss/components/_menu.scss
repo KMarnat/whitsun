@@ -179,11 +179,23 @@
         width: 6rem;
         height: 6rem;
         border-radius: 50%; // Round corners
+
+        @media #{$breakpoint-mobile-portrait} {
+          width: 5rem;
+          height: 5rem;
+        }
+
+        img {
+          @media #{$breakpoint-mobile-portrait} {
+            width: 4rem;
+            height: 4rem;
+          }
+        }
       }
 
       // Title of the button
       &__title {
-        font-family: 'Source Sans 3', sans-serif; // Changing font
+        font-family: "Source Sans 3", sans-serif; // Changing font
         margin-top: 1rem; // Spacing outside the element, top
         font-weight: 700; // Font thickness
       }
@@ -198,6 +210,11 @@
         top: 3rem; // Positioning from top
         z-index: -1; // Positioning on the Z axis
         transition: height 0.3s ease-in-out; // Specifying what is transitioning and the time
+
+        @media #{$breakpoint-mobile-portrait} {
+          width: 5rem;
+          top: 2rem; // Positioning from top
+        }
       }
 
       // List item icon image
