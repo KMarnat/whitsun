@@ -1,5 +1,4 @@
-import halfcirclegreen from '../assets/half-circle-green.png';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
 export default function FoodAndDrinks() {
   return (

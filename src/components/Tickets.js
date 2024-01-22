@@ -1,6 +1,5 @@
-import halfcirclegreen from '../assets/half-circle-green.png';
-import tickets from '../tickets';
-import backgroundtubes from '../assets/backgroundtubes.svg';
+import tickets from "../tickets";
+import backgroundtubes from "../assets/backgroundtubes.svg";
 
 export default function Tickets() {
   return (

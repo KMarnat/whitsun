@@ -1,33 +1,33 @@
-import fb from '../assets/icons8-facebook.svg';
-import instagram from '../assets/icons8-instagram.svg';
+import fb from "../assets/icons8-facebook.svg";
+import instagram from "../assets/icons8-instagram.svg";
 
 export default function FooterInfo() {
   return (
     <div className="info">
       <div className="info__socials">
-        <a href="#">
+        <p>
           <img src={fb} alt="socials icon" />
-        </a>
-        <a href="#">
+        </p>
+        <p>
           <img src={instagram} alt="socials icon" />
-        </a>
+        </p>
       </div>
       <nav className="info__nav">
         <ul className="info__list">
           <li className="item">
-            <a href="#">Foreninger</a>
+            <p>Foreninger</p>
           </li>
           <li className="item">
-            <a href="#">FAQ</a>
+            <p>FAQ</p>
           </li>
           <li className="item">
-            <a href="#">Presse</a>
+            <p>Presse</p>
           </li>
           <li className="item">
-            <a href="#">Cookie</a>
+            <p>Cookie</p>
           </li>
           <li className="item">
-            <a href="#">Privatliv</a>
+            <p>Privatliv</p>
           </li>
         </ul>
       </nav>

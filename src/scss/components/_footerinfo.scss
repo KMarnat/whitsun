@@ -10,8 +10,11 @@
 
   // Social icons container
   &__socials {
+    display: flex;
+
     // Anchor tag of the socials icon
-    a {
+    p {
+      cursor: pointer;
       margin: 1rem; // Spacing outside the element
 
       img {
@@ -46,6 +49,11 @@
     .item {
       margin-right: 2rem; // Spacing outside the element, right
       position: relative; // Needed for dot placements between the items
+      display: flex;
+
+      p {
+        margin: 0;
+      }
 
       @media #{$breakpoint-tablet-portrait} {
         margin-right: 1rem; // Spacing outside the element. For the dot next to list items
@@ -61,7 +69,7 @@
 
       // Pseudoelement, dot between items
       &:after {
-        content: '·'; // The dot between items
+        content: "·"; // The dot between items
         margin-left: 2rem; // Spacing outside the element, left
 
         @media #{$breakpoint-tablet-portrait} {
@@ -108,12 +116,12 @@
 
       // Pseudoelement, dot after every <p>
       &:after {
-        content: '·'; // Inside of the pseudoelement
+        content: "·"; // Inside of the pseudoelement
         position: absolute; // Needed for the positioning of the element
         margin-left: 1rem; // Spacing outside the element, left. Needed for the positioning of the element
 
         @media #{$breakpoint-mobile-landscape} {
-          content: ''; // Removing the dot
+          content: ""; // Removing the dot
           margin-left: 0; // Removing spacing outside the element, left side
         }
       }

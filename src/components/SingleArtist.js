@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import artists from '../artists';
-import spotifylogo from '../assets/spotify-logo.svg';
-import FoodCta from './FoodCta';
+import artists from "../artists";
+import spotifylogo from "../assets/spotify-logo.svg";
+import FoodCta from "./FoodCta";
 
 export default function SingleArtist() {
-  const [artistName, setArtistName] = useState(decodeURI(window.location.pathname.split('/')[1]));
+  const [artistName] = useState(decodeURI(window.location.pathname.split("/")[1]));
 
   const artist = artists.find((artist) => artist.name === artistName);
 
