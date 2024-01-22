@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import foods from '../foods';
-import FoodCta from './FoodCta';
+import { useState } from "react";
+import foods from "../foods";
+import FoodCta from "./FoodCta";
 
 export default function FoodDetail() {
-  const [foodName, setFoodName] = useState(decodeURI(window.location.pathname.split('drikke/')[1]));
+  const [foodName] = useState(decodeURI(window.location.pathname.split("drikke/")[1]));
 
   const food = foods.find((food) => food.name === foodName);
 
